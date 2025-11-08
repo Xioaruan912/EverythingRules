@@ -1,0 +1,21 @@
+#!name=小依洗衣机去广告分流
+#!author=EVND
+#!raw-url=https://raw.githubusercontent.com/Xioaruan912/EverythingRules/refs/heads/main/rules/loon/xiaoyi.list
+#!date=2025-11-09 02:10:31
+#############################################
+
+DOMAIN-SUFFIX,ugdtimg.com,REJECT
+DOMAIN-SUFFIX,yfanads.com,REJECT
+DOMAIN-SUFFIX,pangolin-sdk-toutiao.com,REJECT
+DOMAIN-SUFFIX,pangolin-sdk-toutiao1.com,REJECT
+DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com,REJECT
+DOMAIN-SUFFIX,pglstatp-toutiao.com,REJECT
+DOMAIN-SUFFIX,adukwai.com,REJECT
+DOMAIN-SUFFIX,gifshow.com,REJECT
+DOMAIN,mi.gdt.qq.com,REJECT
+DOMAIN-SUFFIX,umeng.com,REJECT
+DOMAIN-SUFFIX,umengcloud.com,REJECT
+DOMAIN-SUFFIX,xmulife.com,REJECT
+DOMAIN-SUFFIX,ulife.group,REJECT
+DOMAIN-SUFFIX,volces.com,REJECT
+DOMAIN-SUFFIX,open.e.kuaishou.com,REJECT
