@@ -1,0 +1,9 @@
+#!name=自用代理分流 福建
+#!author=EVND
+#!raw-url=https://raw.githubusercontent.com/Xioaruan912/EverythingRules/refs/heads/main/rules/loon/fujian.list
+#!date=2025-11-09 02:06:36
+#############################################
+
+DOMAIN,abce.722225.xyz
+DOMAIN-SUFFIX,ggy
+DOMAIN-SUFFIX,guguyun
