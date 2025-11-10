@@ -2,9 +2,9 @@
 // 兼容 Loon/Surge 的脚本，读取自定义参数并向你的服务器上报
 
 // 在 Loon 中：可在脚本运行前，通过「脚本 -> 脚本设置」或其它方式
-//   $persistentStore.write("notify_server_url", "http://<你的服务器>:8000/hook")
-//   $persistentStore.write("notify_secret", "my-secret")      // 可选
-//   $persistentStore.write("notify_note", "修改了节点/规则")   // 可选
+$persistentStore.write("notify_server_url", "http://8.211.128.181:8000/hook")
+$persistentStore.write("notify_secret", "my-secret")      // 可选
+$persistentStore.write("notify_note", "修改了节点/规则")   // 可选
 
 const read = (k, d = "") => {
     try { return $persistentStore.read(k) ?? d; } catch { return d; }
