@@ -168,6 +168,7 @@ FINAL,FINAL
 [Script]
 
 [Plugin]
+https://kelee.one/Tool/Loon/Lpx/ValorantBible_remove_ads.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/Sub-Store.lpx, policy=Auto-HK, enabled=true
 https://kelee.one/Tool/Loon/Lpx/QuarkBrowser_remove_ads.lpx, enabled=true
 https://kelee.one/Tool/Loon/Lpx/HUPU_remove_ads.lpx, enabled=true
