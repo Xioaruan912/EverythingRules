@@ -30,7 +30,7 @@ resource-parser = https://github.com/sub-store-org/Sub-Store/releases/latest/dow
 [Remote Filter]
 # 远程节点订阅正则筛选
 美国 = NameRegex, FilterKey = "(?i)(美国|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|🇺🇸|US|USA)"
-香港 = NameRegex, FilterKey = "(?i)(香港|港|hong|HK|HKG|🇭🇰)"
+香港 = NameRegex, FilterKey = "(?i)(香港|hong|HK|HKG|🇭🇰)"
 日本 = NameRegex, FilterKey = "(?i)(日本|东京|大阪|泉日|埼玉|🇯🇵|JP|Japan)"
 台湾 = NameRegex, FilterKey = "(?i)(台湾|台|TW|Taiwan)"
 新加坡 = NameRegex, FilterKey = "(?i)(狮城|新加坡|🇸🇬|SG|Singapore)"
