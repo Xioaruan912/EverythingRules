@@ -1,0 +1,15 @@
+#!name=自用代理分流 走代理
+#!author=EVND
+#!raw-url=https://raw.githubusercontent.com/Xioaruan912/EverythingRules/refs/heads/main/rules/clash/SELF_VPN.yaml
+#!date=2025-11-09 02:06:36
+#############################################
+
+payload:
+  - DOMAIN,abce.722225.xyz
+  - DOMAIN,abce.123242.xyz
+  - DOMAIN,www.guguyun.com
+  - DOMAIN,www.ggy.net
+  - DOMAIN-SUFFIX,nodeseek.com
+  - DOMAIN-SUFFIX,linux.do
+  - DOMAIN-SUFFIX,deepflood.com
+  - DOMAIN-SUFFIX,idcflare.com
