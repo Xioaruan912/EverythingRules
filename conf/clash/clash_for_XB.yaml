@@ -124,7 +124,7 @@ proxy-groups:
   - { name: "AI", type: url-test, proxies: [/USA/],
       url: "https://chat.openai.com",
       interval: 600, timeout: 3000, tolerance: 80 }
-  - { name: "视频", type: select, proxies: [/SG/, /JP/] }
+  - { name: "视频", type: select, proxies: [] }
   - { name: "自动选择", type: url-test, proxies: [],
       url: "https://www.gstatic.com/generate_204",
       interval: 300, timeout: 3000, tolerance: 80 }
@@ -168,13 +168,34 @@ rule-providers:
     url: "https://rule.kelee.one/Clash/OpenAI.yaml"
     path: ./ruleset/OpenAI.yaml
     interval: 86400
+  98Tang:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/Xioaruan912/EverythingRules/refs/heads/main/rules/clash/98Tang.yaml"
+    path: ./ruleset/98Tang.yaml
+    interval: 86400
+  fujian:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/Xioaruan912/EverythingRules/refs/heads/main/rules/clash/fujian.yaml"
+    path: ./ruleset/fujian.yaml
+    interval: 86400
+  xiaoyi:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/Xioaruan912/EverythingRules/refs/heads/main/rules/clash/xiaoyi.yaml"
+    path: ./ruleset/xiaoyi.yaml
+    interval: 86400
 rules:
+  - RULE-SET,98Tang,视频
   - RULE-SET,YouTube,视频
   - RULE-SET,TikTok,视频
+  - RULE-SET,98Tang,视频
   - RULE-SET,OpenAI,AI
-  - RULE-SET,OneOneFive,DIRECT
   - RULE-SET,Gemini,AI
+  - RULE-SET,OneOneFive,DIRECT
   - RULE-SET,China,DIRECT
+  - RULE-SET,xiaoyi,REJECT
   - GEOIP,LAN,DIRECT,no-resolve
   - GEOIP,CN,DIRECT,no-resolve
   - MATCH,🔄$app_name
