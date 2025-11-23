@@ -135,7 +135,8 @@ https://raw.githubusercontent.com/Xioaruan912/EverythingRules/refs/heads/main/ru
 https://raw.githubusercontent.com/Xioaruan912/EverythingRules/refs/heads/main/rules/loon/xiaoyi.list, policy=Advertising, tag=xiaoyi, enabled=true
 https://raw.githubusercontent.com/Xioaruan912/EverythingRules/refs/heads/main/rules/loon/reject.list, policy=Advertising, tag=xiaoyi, enabled=true
 #self分流
-https://raw.githubusercontent.com/Xioaruan912/EverythingRules/refs/heads/main/rules/loon/self.list, policy=Auto-HK, tag=self, enabled=true
+https://raw.githubusercontent.com/Xioaruan912/EverythingRules/refs/heads/main/rules/loon/self.list, policy=DIRECT, tag=self, enabled=true
+https://raw.githubusercontent.com/Xioaruan912/EverythingRules/refs/heads/main/rules/loon/SELF_VPN.list, policy=Auto-HK, tag=self, enabled=true
 # -----------------------------------------------------------------------------规则集结束 -----------------------------------------------------------------------------
 
 
