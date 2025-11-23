@@ -1,0 +1,18 @@
+#!name=98tang分流 #!author=EVND 
+#!raw-url=https://raw.githubusercontent.com/Xioaruan912/EverythingRules/refs/heads/main/rules/clash/98Tang.yaml
+#!date=2025-11-09 02:06:36 
+
+#############################################
+payload:
+  - DOMAIN-SUFFIX,441133.cc
+  - DOMAIN-SUFFIX,sehuatang.com
+  - DOMAIN-SUFFIX,98t.tv
+  - DOMAIN-SUFFIX,98tang.com
+  - DOMAIN-SUFFIX,98t.la
+  - DOMAIN-SUFFIX,98tang.net
+  - DOMAIN-SUFFIX,86178.cc
+  - DOMAIN-SUFFIX,558844.cc
+  - DOMAIN-SUFFIX,tu.ymawv.la
+  - DOMAIN-SUFFIX,jo.0hax7.app
+  - URL-REGEX,.*\/images\/pc_bg\.jpg$
+  - DOMAIN-SUFFIX,666.sybxpu.com
