@@ -134,8 +134,8 @@ https://raw.githubusercontent.com/Xioaruan912/EverythingRules/refs/heads/main/ru
 #小依洗衣机去广告
 https://raw.githubusercontent.com/Xioaruan912/EverythingRules/refs/heads/main/rules/loon/xiaoyi.list, policy=Advertising, tag=xiaoyi, enabled=true
 https://raw.githubusercontent.com/Xioaruan912/EverythingRules/refs/heads/main/rules/loon/reject.list, policy=Advertising, tag=xiaoyi, enabled=true
-#福建分流
-https://raw.githubusercontent.com/Xioaruan912/EverythingRules/refs/heads/main/rules/loon/fujian.list, policy=Auto-HK, tag=fujian, enabled=true
+#self分流
+https://raw.githubusercontent.com/Xioaruan912/EverythingRules/refs/heads/main/rules/loon/self.list, policy=Auto-HK, tag=self, enabled=true
 # -----------------------------------------------------------------------------规则集结束 -----------------------------------------------------------------------------
 
 
