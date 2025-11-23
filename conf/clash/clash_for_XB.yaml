@@ -120,15 +120,15 @@ dns:
 proxies:
 
 proxy-groups:
-  - { name: "🔄$app_name", type: select, proxies: ["自动选择", "故障转移"] }
-  - { name: "AI", type: url-test, proxies: [/USA/],
+  - { name: "[APP] 动态切换", type: select, proxies: ["[Auto] 自动选择", "[Safe] 故障转移"] }
+  - { name: "[AI] OpenAI 优选", type: url-test, proxies: [/USA/],
       url: "https://chat.openai.com",
       interval: 600, timeout: 3000, tolerance: 80 }
-  - { name: "视频", type: select, proxies: [] }
-  - { name: "自动选择", type: url-test, proxies: [],
+  - { name: "[Media] 视频媒体", type: select, proxies: [/HK/,/SG/] }
+  - { name: "[Auto] 自动选择", type: url-test, proxies: [],
       url: "https://www.gstatic.com/generate_204",
       interval: 300, timeout: 3000, tolerance: 80 }
-  - { name: "故障转移", type: fallback, proxies: [],
+  - { name: "[Safe] 故障转移", type: fallback, proxies: [],
       url: "https://www.gstatic.com/generate_204",
       interval: 600, timeout: 3000 }
 rule-providers:
@@ -174,11 +174,17 @@ rule-providers:
     url: "https://raw.githubusercontent.com/Xioaruan912/EverythingRules/refs/heads/main/rules/clash/98Tang.yaml"
     path: ./ruleset/98Tang.yaml
     interval: 86400
-  fujian:
+  SELF_VPN:
     type: http
     behavior: classical
-    url: "https://raw.githubusercontent.com/Xioaruan912/EverythingRules/refs/heads/main/rules/clash/fujian.yaml"
-    path: ./ruleset/fujian.yaml
+    url: "https://raw.githubusercontent.com/Xioaruan912/EverythingRules/refs/heads/main/rules/clash/SELF_VPN.yaml"
+    path: ./ruleset/SELF_VPN.yaml
+    interval: 86400
+  SELF:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/Xioaruan912/EverythingRules/refs/heads/main/rules/clash/self.yaml"
+    path: ./ruleset/SELF.yaml
     interval: 86400
   xiaoyi:
     type: http
@@ -186,16 +192,129 @@ rule-providers:
     url: "https://raw.githubusercontent.com/Xioaruan912/EverythingRules/refs/heads/main/rules/clash/xiaoyi.yaml"
     path: ./ruleset/xiaoyi.yaml
     interval: 86400
+  GitHub:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/GitHub.yaml"
+    path: ./ruleset/GitHub.yaml
+    interval: 86400
+  AD:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/Xioaruan912/EverythingRules/refs/heads/main/rules/clash/reject.yaml"
+    path: ./ruleset/AD.yaml
+    interval: 86400
+
+  SpeedtestChina:
+    type: http
+    behavior: classical
+    url: "https://kelee.one/Tool/Clash/Rule/SpeedtestChina.yaml"
+    path: ./ruleset/SpeedtestChina.yaml
+    interval: 86400
+
+  SpeedtestInternational:
+    type: http
+    behavior: classical
+    url: "https://kelee.one/Tool/Clash/Rule/SpeedtestInternational.yaml"
+    path: ./ruleset/SpeedtestInternational.yaml
+    interval: 86400
+###############中国分流############
+  ChinaASN:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/ChinaASN.yaml"
+    path: ./ruleset/ChinaASN.yaml
+    interval: 86400
+
+  ChinaDNS:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/ChinaDNS.yaml"
+    path: ./ruleset/ChinaDNS.yaml
+    interval: 86400
+
+  ChinaIPs:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/ChinaIPs.yaml"
+    path: ./ruleset/ChinaIPs.yaml
+    interval: 86400
+
+  ChinaIPsBGP:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/ChinaIPsBGP.yaml"
+    path: ./ruleset/ChinaIPsBGP.yaml
+    interval: 86400
+
+  ChinaIPs_No_IPv6:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/ChinaIPs_No_IPv6.yaml"
+    path: ./ruleset/ChinaIPs_No_IPv6.yaml
+    interval: 86400
+
+  ChinaMax:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/ChinaMax.yaml"
+    path: ./ruleset/ChinaMax.yaml
+    interval: 86400
+
+  ChinaMaxNoIP:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/ChinaMaxNoIP.yaml"
+    path: ./ruleset/ChinaMaxNoIP.yaml
+    interval: 86400
+
+  ChinaNews:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/ChinaNews.yaml"
+    path: ./ruleset/ChinaNews.yaml
+    interval: 86400
+
+  ChinaMobile:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/ChinaMobile.yaml"
+    path: ./ruleset/ChinaMobile.yaml
+    interval: 86400
+
+  ChinaMaxNoMedia:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/ChinaMaxNoMedia.yaml"
+    path: ./ruleset/ChinaMaxNoMedia.yaml
+    interval: 86400
+##############中国分流结束#################
 rules:
-  - RULE-SET,98Tang,视频
-  - RULE-SET,YouTube,视频
-  - RULE-SET,TikTok,视频
-  - RULE-SET,98Tang,视频
-  - RULE-SET,OpenAI,AI
-  - RULE-SET,Gemini,AI
+  - RULE-SET,GitHub,[APP] 动态切换
+  - RULE-SET,SELF_VPN,[APP] 动态切换
+  - RULE-SET,SpeedtestInternational,[APP] 动态切换
+  - RULE-SET,98Tang,[Media] 视频媒体
+  - RULE-SET,YouTube,[Media] 视频媒体
+  - RULE-SET,TikTok,[Media] 视频媒体
+  - RULE-SET,OpenAI,[AI] OpenAI 优选
+  - RULE-SET,Gemini,[AI] OpenAI 优选
   - RULE-SET,OneOneFive,DIRECT
+  - RULE-SET,SELF,DIRECT
+  - RULE-SET,SpeedtestChina,DIRECT
   - RULE-SET,China,DIRECT
+  - RULE-SET,ChinaASN,DIRECT
+  - RULE-SET,ChinaDNS,DIRECT
+  - RULE-SET,ChinaIPs,DIRECT
+  - RULE-SET,ChinaIPsBGP,DIRECT
+  - RULE-SET,ChinaIPs_No_IPv6,DIRECT
+  - RULE-SET,ChinaMax,DIRECT
+  - RULE-SET,ChinaMaxNoIP,DIRECT
+  - RULE-SET,ChinaMaxNoMedia,DIRECT
+  - RULE-SET,ChinaMedia,DIRECT
+  - RULE-SET,ChinaMobile,DIRECT
+  - RULE-SET,ChinaNews,DIRECT
   - RULE-SET,xiaoyi,REJECT
+  - RULE-SET,AD,REJECT
   - GEOIP,LAN,DIRECT,no-resolve
   - GEOIP,CN,DIRECT,no-resolve
-  - MATCH,🔄$app_name
+  - MATCH,[APP] 动态切换
