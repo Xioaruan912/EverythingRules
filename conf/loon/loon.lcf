@@ -118,8 +118,18 @@ https://rule.kelee.one/Loon/Epic.lsr, policy=DIRECT, tag=Epic.lsr, enabled=true
 https://rule.kelee.one/Loon/ChinaMedia.lsr, policy=DIRECT, tag=ChinaMedia.lsr, enabled=true
 https://rule.kelee.one/Loon/ChinaIPsBGP.lsr, policy=DIRECT, tag=ChinaIPsBGP.lsr, enabled=true
 https://rule.kelee.one/Loon/ChinaIPs.lsr, policy=DIRECT, tag=ChinaIPs.lsr, enabled=true
+https://rule.kelee.one/Loon/ChinaIPs_No_IPv6.lsr, policy=DIRECT, tag=ChinaIPs_No_IPv6.lsr, enabled=true
 https://rule.kelee.one/Loon/ChinaDNS.lsr, policy=DIRECT, tag=ChinaDNS.lsr, enabled=true
-https://rule.kelee.one/Loon/ChinaASN.lsr, policy=DIRECT, tag=ChinaASN.lsr, enabled=true
+https://rule.kelee.one/Loon/ChinaMax.lsr, policy=DIRECT, tag=ChinaMax.lsr, enabled=true
+https://rule.kelee.one/Loon/ChinaMaxNoIP.lsr, policy=DIRECT, tag=ChinaMaxNoIP.lsr, enabled=true
+https://rule.kelee.one/Loon/ChinaMaxNoMedia.lsr, policy=DIRECT, tag=ChinaMaxNoMedia.lsr, enabled=true
+https://rule.kelee.one/Loon/ChinaMax_No_IPv6.lsr, policy=DIRECT, tag=ChinaMax_No_IPv6.lsr, enabled=true
+https://rule.kelee.one/Loon/ChinaMobile.lsr, policy=DIRECT, tag=ChinaMobile.lsr, enabled=true
+https://rule.kelee.one/Loon/ChinaNews.lsr, policy=DIRECT, tag=ChinaNews.lsr, enabled=true
+https://rule.kelee.one/Loon/ChinaNoMedia.lsr, policy=DIRECT, tag=ChinaNoMedia.lsr, enabled=true
+https://rule.kelee.one/Loon/ChinaTelecom.lsr, policy=DIRECT, tag=ChinaTelecom.lsr, enabled=true
+https://rule.kelee.one/Loon/ChinaTest.lsr, policy=DIRECT, tag=ChinaTest.lsr, enabled=true
+https://rule.kelee.one/Loon/ChinaUnicom.lsr, policy=DIRECT, tag=ChinaUnicom.lsr, enabled=true
 https://rule.kelee.one/Loon/China.lsr, policy=DIRECT, tag=China.lsr, enabled=true
 https://rule.kelee.one/Loon/CSDN.lsr, policy=DIRECT, tag=CSDN.lsr, enabled=true
 https://rule.kelee.one/Loon/BiliBiliIntl.lsr, policy=DIRECT, tag=BiliBiliIntl.lsr, enabled=true
@@ -153,9 +163,7 @@ https://raw.githubusercontent.com/Xioaruan912/EverythingRules/refs/heads/main/ru
 # 配置文件已自带远程GEOIP, cn, DIRECT规则，请勿在此添加
 # 请勿修改远程CN REGION规则的排序甚至删除
 
-DOMAIN-SUFFIX,playz.mjji.de,TikTok
-DOMAIN-SUFFIX,emby.heisi.org,TikTok
-DOMAIN-SUFFIX,lite.cn2gias.uk,OpenAI
+
 
 DOMAIN-SUFFIX,local,DIRECT
 GEOIP,CN,DIRECT
