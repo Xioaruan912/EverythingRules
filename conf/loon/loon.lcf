@@ -57,6 +57,7 @@ FINAL = select, Global, DIRECT, Global, url = http://cp.cloudflare.com/generate_
 
 [Remote Rule]
 # -------------------- 🌏 全球代理类规则--------------------
+https://kelee.one/Tool/Loon/Lsr/AI.lsr, policy=US, tag=AI.lsr, enabled=true
 https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Loon/Google/Google.list, policy=Global, tag=Google, enabled=true
 https://kelee.one/Tool/Loon/Lsr/SpeedtestInternational.lsr, policy=Global, tag=Speedtest-INT, enabled=true
 https://rule.kelee.one/Loon/Speedtest.lsr, policy=Global, tag=Speedtest, enabled=true
