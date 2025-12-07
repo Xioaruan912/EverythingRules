@@ -1,0 +1,5 @@
+# UpdateTime：2025-12-06 03:10:04
+# RuleCount：2
+payload:
+  - DOMAIN-SUFFIX,mtg.now.com
+  - DOMAIN-SUFFIX,moov.hk

@@ -1,0 +1,7 @@
+# UpdateTime：2025-12-06 03:05:51
+# RuleCount：4
+payload:
+  - DOMAIN-SUFFIX,aol.ca
+  - DOMAIN-SUFFIX,aol.com
+  - DOMAIN-SUFFIX,aolnews.com
+  - DOMAIN-SUFFIX,aol.co.uk

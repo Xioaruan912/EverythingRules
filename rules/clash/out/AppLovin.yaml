@@ -1,0 +1,5 @@
+# UpdateTime：2025-12-06 03:08:48
+# RuleCount：2
+payload:
+  - DOMAIN-SUFFIX,applovin.com
+  - DOMAIN-SUFFIX,applvn.com

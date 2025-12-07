@@ -1,0 +1,8 @@
+#!name=自用代理分流 走代理
+#!author=EVND
+#!raw-url=https://raw.githubusercontent.com/Xioaruan912/EverythingRules/refs/heads/main/rules/clash/SELF.yaml
+#!date=2025-11-09 02:06:36
+#############################################
+
+payload:
+    DOMAIN-SUFFIX,fofa.info

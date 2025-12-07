@@ -1,0 +1,9 @@
+# UpdateTime：2025-12-06 03:10:02
+# RuleCount：6
+payload:
+  - DOMAIN-SUFFIX,tidal-cms.s3.amazonaws.com
+  - DOMAIN-SUFFIX,tidal.com
+  - DOMAIN-SUFFIX,tidalhifi.com
+  - DOMAIN-SUFFIX,wimpmusic.com
+  - USER-AGENT,TIDAL*
+  - USER-AGENT,TIDAL*dia

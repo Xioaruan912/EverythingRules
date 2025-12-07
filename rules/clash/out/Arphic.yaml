@@ -1,0 +1,7 @@
+# UpdateTime：2025-12-06 03:05:53
+# RuleCount：4
+payload:
+  - DOMAIN-SUFFIX,arphic.com.cn
+  - DOMAIN-SUFFIX,arphic.com
+  - DOMAIN-SUFFIX,ifontcloud.com
+  - DOMAIN-SUFFIX,arphic.com.tw

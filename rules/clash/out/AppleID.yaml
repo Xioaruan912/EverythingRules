@@ -1,0 +1,7 @@
+# UpdateTime：2025-12-06 03:05:52
+# RuleCount：4
+payload:
+  - DOMAIN,appleid.apple.com
+  - DOMAIN,gsa.apple.com
+  - DOMAIN,idmsa.apple.com
+  - DOMAIN,appleid.cdn-apple.com

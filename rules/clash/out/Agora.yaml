@@ -1,0 +1,6 @@
+# UpdateTime：2025-12-06 03:05:50
+# RuleCount：3
+payload:
+  - DOMAIN-SUFFIX,agoraio.cn
+  - DOMAIN-SUFFIX,agoralab.co
+  - DOMAIN-SUFFIX,agora.io

@@ -1,0 +1,8 @@
+# UpdateTime：2025-12-06 03:05:59
+# RuleCount：5
+payload:
+  - DOMAIN,music.youtube.com
+  - USER-AGENT,YouTubeMusic*
+  - USER-AGENT,*YouTubeMusic*
+  - USER-AGENT,com.google.ios.youtubemusic*
+  - USER-AGENT,*com.google.ios.youtubemusic*

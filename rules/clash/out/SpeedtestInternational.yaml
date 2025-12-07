@@ -1,5 +1,5 @@
-# UpdateTime：2025-11-23 21:35:24
-# RuleCount：16771
+# UpdateTime：2025-11-26 23:31:18
+# RuleCount：16811
 payload:
   - DOMAIN,speedtest-syd.nsw.au.hostuniversal.com.au
   - DOMAIN,speedtest-adl.sa.au.hostuniversal.com.au
@@ -258,6 +258,7 @@ payload:
   - DOMAIN,speedtest.wsb.megadata.net.id
   - DOMAIN,speedtest.yk.megadata.net.id
   - DOMAIN,speedtest.aceh.myrepublic.net.id
+  - DOMAIN,speedtest.makasar.myrepublic.net.id
   - DOMAIN,speedtest.malang.myrepublic.net.id
   - DOMAIN,speedtest.medan.myrepublic.net.id
   - DOMAIN,speedtest.palembang.myrepublic.net.id
@@ -809,6 +810,7 @@ payload:
   - DOMAIN,speedtest.fcn.com.bd
   - DOMAIN,speedtest.fnet.com.bd
   - DOMAIN,speedtest.ftp.com.bd
+  - DOMAIN,speedtest.icn.com.bd
   - DOMAIN,speedtest.ipinternet.com.bd
   - DOMAIN,speedtest.kurigramcommunications.com.bd
   - DOMAIN,speedtest.tufanonline.com.bd
@@ -902,6 +904,7 @@ payload:
   - DOMAIN,testes.acmnetminas.com.br
   - DOMAIN,velocidade.acmprovedor.com.br
   - DOMAIN,speedt.acnetrnprovedor.com.br
+  - DOMAIN,speedtest.acnetrnprovedor.com.br
   - DOMAIN,speed.acrfibra.com.br
   - DOMAIN,sp1.acsnettelecom.com.br
   - DOMAIN,speedtestparacambi.adaptlink.com.br
@@ -2097,6 +2100,7 @@ payload:
   - DOMAIN,velocimetro.gdnetfibra.com.br
   - DOMAIN,speed.gdnetprovedor.com.br
   - DOMAIN,speedtest2.geeknet.com.br
+  - DOMAIN,speedtest.geetecnologia.com.br
   - DOMAIN,minhaconexao.genesysnet.com.br
   - DOMAIN,speed.genettelecom.com.br
   - DOMAIN,speedtest.geracaonet.com.br
@@ -2631,6 +2635,7 @@ payload:
   - DOMAIN,velocidade.jvktelecom.com.br
   - DOMAIN,velocimetro.jvnetlitoral.com.br
   - DOMAIN,speed.jvnetweb.com.br
+  - DOMAIN,speedtest.jvntelecom.com.br
   - DOMAIN,speedtest.jvswifi.com.br
   - DOMAIN,speedtest.k2network.com.br
   - DOMAIN,ookla.kacelinternet.com.br
@@ -3051,6 +3056,7 @@ payload:
   - DOMAIN,speedtest.ncinternet.com.br
   - DOMAIN,speedcarapicuiba.ncsatelecom.com.br
   - DOMAIN,speedooakla.ncsatelecom.com.br
+  - DOMAIN,speedtest.ncsatmaisveloz.com.br
   - DOMAIN,ookla.ndlconnect.com.br
   - DOMAIN,velocidade.ndtelecom.com.br
   - DOMAIN,spd1.ndtelecompb.com.br
@@ -4663,6 +4669,7 @@ payload:
   - DOMAIN,velocidade.wnnet.com.br
   - DOMAIN,velocimetro01.wordnet.com.br
   - DOMAIN,speedtest.worldnetfibra.com.br
+  - DOMAIN,speedtest.worldnetparaiso.com.br
   - DOMAIN,speed.worldnetrn.com.br
   - DOMAIN,speedtest.worldnettelecom.com.br
   - DOMAIN,speedtest.worldnettelecomltda.com.br
@@ -5014,6 +5021,7 @@ payload:
   - DOMAIN,speedtest.directinternet.net.br
   - DOMAIN,sp1.directtelecom.net.br
   - DOMAIN,sp1.dktelecom.net.br
+  - DOMAIN,speedtestdlink.dlinktelecom.net.br
   - DOMAIN,velocidade.dnet.net.br
   - DOMAIN,ookla.dominet.net.br
   - DOMAIN,speed.downup.net.br
@@ -5095,6 +5103,7 @@ payload:
   - DOMAIN,speed.foxnetwork.net.br
   - DOMAIN,teste.foxtelecom.net.br
   - DOMAIN,teste.fpnet.net.br
+  - DOMAIN,spdtst.franconetfibra.net.br
   - DOMAIN,speedtest.fullnettelecom.net.br
   - DOMAIN,speedtest.futuranet.net.br
   - DOMAIN,speedtest.futuretec.net.br
@@ -6060,6 +6069,7 @@ payload:
   - DOMAIN,speedtest.fibrazo.com.co
   - DOMAIN,speedtest.globalfiber.com.co
   - DOMAIN,speedtest.holadigital.com.co
+  - DOMAIN,speedtest.interfibrasdelvalle.com.co
   - DOMAIN,mivelocidad.interos.com.co
   - DOMAIN,speedtest.interredes.com.co
   - DOMAIN,speedtest01.ispgroup.com.co
@@ -6292,6 +6302,7 @@ payload:
   - DOMAIN,speedtest.india.smartnetisp.com
   - DOMAIN,speed.kansas.smishcraft.com
   - DOMAIN,speedtest.sonepat.softechinfosol.com
+  - DOMAIN,dfw01.speedtest.soraxus.com
   - DOMAIN,a.speedtest.souuni.com
   - DOMAIN,sipl.speedtest.sukaininfoway.com
   - DOMAIN,spd01-adl.au.superloop.com
@@ -6318,6 +6329,7 @@ payload:
   - DOMAIN,speedtest.palembang2.telkomsel.com
   - DOMAIN,speedtest.pekanbaru2.telkomsel.com
   - DOMAIN,speedtest.semarang.telkomsel.com
+  - DOMAIN,speedtest.serang.telkomsel.com
   - DOMAIN,speedtest.solo.telkomsel.com
   - DOMAIN,speedtest.surabaya2.telkomsel.com
   - DOMAIN,speedtest.yogyakarta.telkomsel.com
@@ -6778,6 +6790,7 @@ payload:
   - DOMAIN,jombang.isyfinet.my.id
   - DOMAIN,malang.javamediagrup.my.id
   - DOMAIN,speedtest.jawaranetwork.my.id
+  - DOMAIN,kendal.joanet.my.id
   - DOMAIN,riznetwork.jsn-lmg.my.id
   - DOMAIN,ponorogo.jtech-network.my.id
   - DOMAIN,speedtest.kanebsa.my.id
@@ -6888,6 +6901,7 @@ payload:
   - DOMAIN,speedtest04.garuda.net.id
   - DOMAIN,speedtest07.garuda.net.id
   - DOMAIN,speedtest08.garuda.net.id
+  - DOMAIN,speedtest09.garuda.net.id
   - DOMAIN,speedtest.gas.net.id
   - DOMAIN,speedtest2.gas.net.id
   - DOMAIN,speedtest3.gas.net.id
@@ -6941,6 +6955,7 @@ payload:
   - DOMAIN,speedtest.ims.net.id
   - DOMAIN,speedtest-jkt-new.ims.net.id
   - DOMAIN,speedtest.indocyber.net.id
+  - DOMAIN,kraspeedtest.infi.net.id
   - DOMAIN,speedtest.infi.net.id
   - DOMAIN,speedtest.insta.net.id
   - DOMAIN,speedtest-sby.internusa.net.id
@@ -6984,6 +6999,7 @@ payload:
   - DOMAIN,speedkaltim.lancarjaya.net.id
   - DOMAIN,speedtest-sby.laxo.net.id
   - DOMAIN,speedtestsby.ldm.net.id
+  - DOMAIN,speeddmk.ldp.net.id
   - DOMAIN,speedlmg.ldp.net.id
   - DOMAIN,speedmlg.ldp.net.id
   - DOMAIN,speedpasuruan.ldp.net.id
@@ -7067,6 +7083,7 @@ payload:
   - DOMAIN,speedtest05.orion.net.id
   - DOMAIN,speedtest.paglo.net.id
   - DOMAIN,speedtest.palapa.net.id
+  - DOMAIN,speedtest-mojo.palapa.net.id
   - DOMAIN,speedtest6.palapa.net.id
   - DOMAIN,ookla.pas.net.id
   - DOMAIN,ookla2.pas.net.id
@@ -7197,6 +7214,7 @@ payload:
   - DOMAIN,speedtest-smg.winet.net.id
   - DOMAIN,btest.wiz.net.id
   - DOMAIN,speedtest.wmn.net.id
+  - DOMAIN,fast.wow.net.id
   - DOMAIN,speedtest.wpt.net.id
   - DOMAIN,speedtest-sukoharjo.yam.net.id
   - DOMAIN,speedtest-wng.yam.net.id
@@ -7373,6 +7391,7 @@ payload:
   - DOMAIN,speedtest.fastel.net.in
   - DOMAIN,speedtest.jetair.net.in
   - DOMAIN,speed.malang.net.in
+  - DOMAIN,sp1.megahertz.net.in
   - DOMAIN,speedtest.megahertz.net.in
   - DOMAIN,mysoresp.opto.net.in
   - DOMAIN,sp1.opto.net.in
@@ -8067,6 +8086,7 @@ payload:
   - DOMAIN,velocimetro.sma.lv.network
   - DOMAIN,speedtest.ookla.maetrix.network
   - DOMAIN,speedtest.zl.osso.network
+  - DOMAIN,speedtest.de.senko.network
   - DOMAIN,speedtest.galaxybackbone.com.ng
   - DOMAIN,ca-speedtest.sitehub.com.ng
   - DOMAIN,ng-speedtest.sitehub.com.ng
@@ -8388,6 +8408,7 @@ payload:
   - DOMAIN,speedtest.mtcl.net.pk
   - DOMAIN,speedtest2.nasstecairnet.net.pk
   - DOMAIN,speedtest3.nasstecairnet.net.pk
+  - DOMAIN,speedtest4.nasstecairnet.net.pk
   - DOMAIN,speedtest.netsat.net.pk
   - DOMAIN,speedtest1.nexlinx.net.pk
   - DOMAIN,speedtest.nova.net.pk
@@ -8672,6 +8693,7 @@ payload:
   - DOMAIN,speedtest.netburda.com.tr
   - DOMAIN,speedtest.netwifi.com.tr
   - DOMAIN,speedtest2.plusnet.com.tr
+  - DOMAIN,speedhn.radius2online.com.tr
   - DOMAIN,ookla.sh.com.tr
   - DOMAIN,str01.spnet.com.tr
   - DOMAIN,izmit-speed.tbtnet.com.tr
@@ -9189,6 +9211,7 @@ payload:
   - DOMAIN,speedtest.vodafone.al
   - DOMAIN,speedtest.armix.am
   - DOMAIN,evn-speed.arpinet.am
+  - DOMAIN,speedtest.fnet.am
   - DOMAIN,speedtest.hachn.am
   - DOMAIN,ookla.homenet.am
   - DOMAIN,speedtest.i-net.am
@@ -9904,6 +9927,7 @@ payload:
   - DOMAIN,speedtest.aql.com
   - DOMAIN,speedtest.aquafon.com
   - DOMAIN,speedtest.archtopfiber.com
+  - DOMAIN,derivalnet1-speedtest.arcofiber.com
   - DOMAIN,derivalnet2-speedtest.arcofiber.com
   - DOMAIN,peniel-speedtest.arcofiber.com
   - DOMAIN,stringnets-speedtest.arcofiber.com
@@ -10594,6 +10618,7 @@ payload:
   - DOMAIN,speedtest.galaxynetbd.com
   - DOMAIN,test.ganeshatransjaya.com
   - DOMAIN,speedtest.gartechsolution.com
+  - DOMAIN,speed.gatewayftth.com
   - DOMAIN,speedtest.gavlenet.com
   - DOMAIN,speed1.gazonindia.com
   - DOMAIN,speedtest.gbnetwork.com
@@ -10704,6 +10729,7 @@ payload:
   - DOMAIN,speedtestc.grupovelocity.com
   - DOMAIN,velocidade.grupowebnet.com
   - DOMAIN,fast.gscbn.com
+  - DOMAIN,speedtest.guajiranet.com
   - DOMAIN,speedtest.guaratibanet.com
   - DOMAIN,testme.gulfcoastwifi.com
   - DOMAIN,speedtest.guryfoyglobal.com
@@ -11032,6 +11058,7 @@ payload:
   - DOMAIN,speed.jmintertel.com
   - DOMAIN,speedtest.jmjrfibernet.com
   - DOMAIN,speedtest.jnhlitsolutions.com
+  - DOMAIN,speedtest.joketelperu.com
   - DOMAIN,speedtest.jotazo.com
   - DOMAIN,teste.jrconect.com
   - DOMAIN,teste.jsinformatica74.com
@@ -11043,6 +11070,7 @@ payload:
   - DOMAIN,speedtest.kalaam-telecom.com
   - DOMAIN,speedtest.kaludecolombia.com
   - DOMAIN,speedtest.kashinathpuronline.com
+  - DOMAIN,tubspeedtest.kazibufastnet.com
   - DOMAIN,speedea.kblextelecom.com
   - DOMAIN,speedookla.kblextelecom.com
   - DOMAIN,speedtest.kcatfiber.com
@@ -11279,6 +11307,7 @@ payload:
   - DOMAIN,speedtest.mtmbali.com
   - DOMAIN,speedtestbdg.mtmbali.com
   - DOMAIN,speedtestdps.mtmbali.com
+  - DOMAIN,speedtestjog.mtmbali.com
   - DOMAIN,speedtestmdl.mtmbali.com
   - DOMAIN,speedtestmtr.mtmbali.com
   - DOMAIN,uk-lon-tcy-mtn-speedtest-server-01.mtn.com
@@ -12012,6 +12041,7 @@ payload:
   - DOMAIN,speed.supersonicinternet.com
   - DOMAIN,st.surajnetwork.com
   - DOMAIN,st3.surajnetwork.com
+  - DOMAIN,speedtest.surconexion.com
   - DOMAIN,speedtest.surfshark.com
   - DOMAIN,speedtest.surroundnet.com
   - DOMAIN,speedtest.surrytel.com
@@ -12635,6 +12665,7 @@ payload:
   - DOMAIN,speedtest.homenet.do
   - DOMAIN,speed.sequre.do
   - DOMAIN,speedtest.stix.do
+  - DOMAIN,speedtestconstanza.une.do
   - DOMAIN,speedtestsabaneta.une.do
   - DOMAIN,speedtest.villanet.do
   - DOMAIN,dsa01.screenshot.download
@@ -12954,6 +12985,7 @@ payload:
   - DOMAIN,speedtest1.pithonduras.hn
   - DOMAIN,sp2.pronto.hn
   - DOMAIN,se-speedtest.1cent.host
+  - DOMAIN,speedtest.infrawire.host
   - DOMAIN,speedtest-gv1.geneva.hosting
   - DOMAIN,speedtest-sh1.geneva.hosting
   - DOMAIN,speedtest.netforce.hosting
@@ -13174,6 +13206,7 @@ payload:
   - DOMAIN,speedtest.proxinet.id
   - DOMAIN,boyolali.pusatnet.id
   - DOMAIN,pati.pusatnet.id
+  - DOMAIN,new.rayunet.id
   - DOMAIN,siak.rayunet.id
   - DOMAIN,speedtestcli.satulimanet.id
   - DOMAIN,sv1-server.sblnet.id
@@ -14013,6 +14046,7 @@ payload:
   - DOMAIN,stlembong.afna.link
   - DOMAIN,speedtest.aldm.link
   - DOMAIN,speedtestfl.frantic.link
+  - DOMAIN,speedtest.hipernet.link
   - DOMAIN,teste.oriontelecom.link
   - DOMAIN,speedtest.telemedia.link
   - DOMAIN,speedtest1.telemedia.link
@@ -14033,6 +14067,7 @@ payload:
   - DOMAIN,st.etanetas.lt
   - DOMAIN,speedtestnet.fastlink.lt
   - DOMAIN,speedtest-vno.init.lt
+  - DOMAIN,speedtest.kis.lt
   - DOMAIN,sp1.kli.lt
   - DOMAIN,speedtest4.ntt.lt
   - DOMAIN,testspeed.penki.lt
@@ -14778,6 +14813,7 @@ payload:
   - DOMAIN,cb-speedtest.ghofi.net
   - DOMAIN,speedtest.gibtelecom.net
   - DOMAIN,speed.gigabitpro.net
+  - DOMAIN,speedtest.gigabrasil.net
   - DOMAIN,speedtest.giganetbroadband.net
   - DOMAIN,owst.gilat.net
   - DOMAIN,speedtest-pt.gilat.net
@@ -15317,6 +15353,7 @@ payload:
   - DOMAIN,speedtest1.rox.net
   - DOMAIN,speedtest.roxservices.net
   - DOMAIN,st.royalconnect.net
+  - DOMAIN,speedtest.royalinternet.net
   - DOMAIN,speedtest.rtdsnetwork.net
   - DOMAIN,speedtest.rtmc.net
   - DOMAIN,ookla.rtyne.net
@@ -16071,6 +16108,7 @@ payload:
   - DOMAIN,speedtest.akashanet.pl
   - DOMAIN,speedtest.ap-media.pl
   - DOMAIN,speedtest-net.artcom.pl
+  - DOMAIN,speedtest.artnet.pl
   - DOMAIN,speedtest2.asta-net.pl
   - DOMAIN,speedtest-ng.atman.pl
   - DOMAIN,speedtest.awist.pl
@@ -16434,6 +16472,7 @@ payload:
   - DOMAIN,oslspeedtest.orange.sl
   - DOMAIN,speedtest.telecomitalia.sm
   - DOMAIN,b2b-speedtest-dk01.free.sn
+  - DOMAIN,dm02-speedtest.free.sn
   - DOMAIN,speedtest.free.sn
   - DOMAIN,mondebit.orange.sn
   - DOMAIN,mondebit1.orange.sn
@@ -16658,6 +16697,7 @@ payload:
   - DOMAIN,speedtest.nauranet.xyz
   - DOMAIN,valledupar.nodos.xyz
   - DOMAIN,deki.rayunet.xyz
+  - DOMAIN,isp.rayunetprovider.xyz
   - DOMAIN,speed.simplux.xyz
   - DOMAIN,speedtest.speedfi.xyz
   - DOMAIN,speed1.yasarnet.xyz

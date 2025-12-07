@@ -1,0 +1,6 @@
+# UpdateTime：2025-12-06 03:05:54
+# RuleCount：3
+payload:
+  - DOMAIN-SUFFIX,bootcdn.cn
+  - DOMAIN-SUFFIX,bootcss.com
+  - DOMAIN-SUFFIX,phpcomposer.com

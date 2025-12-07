@@ -1,0 +1,9 @@
+# UpdateTime：2025-12-06 03:05:50
+# RuleCount：6
+payload:
+  - DOMAIN-SUFFIX,bankcomm.com.au
+  - DOMAIN-SUFFIX,95559.com.cn
+  - DOMAIN-SUFFIX,95559.sh.cn
+  - DOMAIN-SUFFIX,bankcomm.com
+  - DOMAIN-SUFFIX,bankcomm.com.mo
+  - DOMAIN-SUFFIX,bankcomm.com.tw

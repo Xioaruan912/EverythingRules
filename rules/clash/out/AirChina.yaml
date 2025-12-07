@@ -1,0 +1,5 @@
+# UpdateTime：2025-12-06 03:05:51
+# RuleCount：2
+payload:
+  - DOMAIN-SUFFIX,airchina.com.cn
+  - DOMAIN-SUFFIX,airchinacargo.com

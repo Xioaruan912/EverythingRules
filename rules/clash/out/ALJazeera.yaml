@@ -1,0 +1,10 @@
+# UpdateTime：2025-12-06 03:05:53
+# RuleCount：7
+payload:
+  - DOMAIN-SUFFIX,aljazeera.com
+  - DOMAIN-SUFFIX,palestineremix.com
+  - DOMAIN-SUFFIX,sarajevopodopsadom.com
+  - DOMAIN-SUFFIX,srebrenica360.com
+  - DOMAIN-SUFFIX,syhacked.com
+  - DOMAIN-SUFFIX,ajplus.net
+  - DOMAIN-SUFFIX,aljazeera.net

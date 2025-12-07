@@ -1,0 +1,6 @@
+# UpdateTime：2025-12-06 03:07:01
+# RuleCount：3
+payload:
+  - DOMAIN-SUFFIX,ocnttv.com
+  - DOMAIN-SUFFIX,5itv.tv
+  - USER-AGENT,HWTVMobile*

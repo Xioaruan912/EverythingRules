@@ -1,0 +1,10 @@
+# UpdateTime：2025-12-06 03:06:00
+# RuleCount：7
+payload:
+  - DOMAIN-SUFFIX,bbtv.cn
+  - DOMAIN-SUFFIX,bestvcdn.cn
+  - DOMAIN-SUFFIX,bestv.com.cn
+  - DOMAIN-SUFFIX,bestvcdn.com.cn
+  - DOMAIN-SUFFIX,smgbb.cn
+  - DOMAIN-SUFFIX,bestvcdn.com
+  - DOMAIN-SUFFIX,bestvcdn.net

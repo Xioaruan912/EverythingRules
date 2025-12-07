@@ -1,0 +1,2569 @@
+mixed-port: 7890
+allow-lan: true
+bind-address: '*'
+mode: rule
+log-level: info
+external-controller: '127.0.0.1:9090'
+dns:
+  enable: true
+  ipv6: true
+  enhanced-mode: fake-ip
+  listen: 53
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+  - '*.lan'
+  - '*.localdomain'
+  - '*.example'
+  - '*.invalid'
+  - '*.localhost'
+  - '*.test'
+  - '*.local'
+  - '*.home.arpa'
+  - time.*.com
+  - time.*.gov
+  - time.*.edu.cn
+  - time.*.apple.com
+  - time1.*.com
+  - time2.*.com
+  - time3.*.com
+  - time4.*.com
+  - time5.*.com
+  - time6.*.com
+  - time7.*.com
+  - ntp.*.com
+  - ntp1.*.com
+  - ntp2.*.com
+  - ntp3.*.com
+  - ntp4.*.com
+  - ntp5.*.com
+  - ntp6.*.com
+  - ntp7.*.com
+  - '*.time.edu.cn'
+  - '*.ntp.org.cn'
+  - +.pool.ntp.org
+  - time1.cloud.tencent.com
+  - music.163.com
+  - '*.music.163.com'
+  - '*.126.net'
+  - musicapi.taihe.com
+  - music.taihe.com
+  - songsearch.kugou.com
+  - trackercdn.kugou.com
+  - '*.kuwo.cn'
+  - api-jooxtt.sanook.com
+  - api.joox.com
+  - joox.com
+  - y.qq.com
+  - '*.y.qq.com'
+  - streamoc.music.tc.qq.com
+  - mobileoc.music.tc.qq.com
+  - isure.stream.qqmusic.qq.com
+  - dl.stream.qqmusic.qq.com
+  - aqqmusic.tc.qq.com
+  - amobile.music.tc.qq.com
+  - '*.xiami.com'
+  - '*.music.migu.cn'
+  - music.migu.cn
+  - '*.msftconnecttest.com'
+  - '*.msftncsi.com'
+  - msftconnecttest.com
+  - msftncsi.com
+  - localhost.ptlogin2.qq.com
+  - localhost.sec.qq.com
+  - +.srv.nintendo.net
+  - +.stun.playstation.net
+  - xbox.*.microsoft.com
+  - '*.*.xboxlive.com'
+  - +.battlenet.com.cn
+  - +.wotgame.cn
+  - +.wggames.cn
+  - +.wowsgame.cn
+  - +.wargaming.net
+  - proxy.golang.org
+  - stun.*.*
+  - stun.*.*.*
+  - +.stun.*.*
+  - +.stun.*.*.*
+  - +.stun.*.*.*.*
+  - heartbeat.belkin.com
+  - '*.linksys.com'
+  - '*.linksyssmartwifi.com'
+  - '*.router.asus.com'
+  - mesu.apple.com
+  - swscan.apple.com
+  - swquery.apple.com
+  - swdownload.apple.com
+  - swcdn.apple.com
+  - swdist.apple.com
+  - lens.l.google.com
+  - stun.l.google.com
+  - +.nflxvideo.net
+  - '*.square-enix.com'
+  - '*.finalfantasyxiv.com'
+  - '*.ffxiv.com'
+  - '*.mcdn.bilivideo.cn'
+  - WORKGROUP
+  default-nameserver:
+  - 223.5.5.5
+  - 119.29.29.29
+  nameserver:
+  - system
+  - 223.5.5.5
+  - 119.29.29.29
+  - https://223.5.5.5/dns-query
+  - https://223.6.6.6/dns-query
+  - https://1.12.12.12/dns-query
+  - https://120.53.53.53/dns-query
+  nameserver-policy: null
+  fallback: null
+  fallback-filter: null
+proxies:
+
+proxy-groups:
+  - { name: "[APP] 动态切换", type: select, proxies: ["[Auto] 自动选择", "[Safe] 故障转移"] }
+  - { name: "[AI] OpenAI 优选", type: url-test, proxies: [/USA/],
+      url: "https://chat.openai.com",
+      interval: 600, timeout: 3000, tolerance: 80 }
+  - { name: "[Media] 视频媒体", type: select, proxies: [] }
+  - { name: "[Auto] 自动选择", type: url-test, proxies: [],
+      url: "https://www.gstatic.com/generate_204",
+      interval: 300, timeout: 3000, tolerance: 80 }
+  - { name: "[Safe] 故障转移", type: fallback, proxies: [],
+      url: "https://www.gstatic.com/generate_204",
+      interval: 600, timeout: 3000 }
+rule-providers:
+  DigitalOcean:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/DigitalOcean.yaml"
+    path: ./ruleset/DigitalOcean.yaml
+    interval: 86400
+
+  Funshion:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Funshion.yaml"
+    path: ./ruleset/Funshion.yaml
+    interval: 86400
+
+  98Tang: 
+    type: http 
+    behavior: classical 
+    url: "https://raw.githubusercontent.com/Xioaruan912/EverythingRules/refs/heads/main/rules/clash/98Tang.yaml" 
+    path: ./ruleset/98Tang.yaml 
+    interval: 86400 
+
+  SELF_VPN: 
+    type: http 
+    behavior: classical
+    url: "https://raw.githubusercontent.com/Xioaruan912/EverythingRules/refs/heads/main/rules/clash/SELF_VPN.yaml" 
+    path: ./ruleset/SELF_VPN.yaml 
+    interval: 86400
+
+  SELF: 
+    type: http 
+    behavior: classical 
+    url: "https://raw.githubusercontent.com/Xioaruan912/EverythingRules/refs/heads/main/rules/clash/self.yaml" 
+    path: ./ruleset/SELF.yaml 
+    interval: 86400
+
+  AD: 
+    type: http 
+    behavior: classical 
+    url: "https://raw.githubusercontent.com/Xioaruan912/EverythingRules/refs/heads/main/rules/clash/reject.yaml" 
+    path: ./ruleset/AD.yaml 
+    interval: 86400
+
+  HBOAsia:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/HBOAsia.yaml"
+    path: ./ruleset/HBOAsia.yaml
+    interval: 86400
+
+  MicrosoftEdge:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/MicrosoftEdge.yaml"
+    path: ./ruleset/MicrosoftEdge.yaml
+    interval: 86400
+
+  ZDNS:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/ZDNS.yaml"
+    path: ./ruleset/ZDNS.yaml
+    interval: 86400
+
+  Npmjs:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Npmjs.yaml"
+    path: ./ruleset/Npmjs.yaml
+    interval: 86400
+
+  Baidu:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Baidu.yaml"
+    path: ./ruleset/Baidu.yaml
+    interval: 86400
+
+  ChinaTest:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/ChinaTest.yaml"
+    path: ./ruleset/ChinaTest.yaml
+    interval: 86400
+
+  AppleNews:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AppleNews.yaml"
+    path: ./ruleset/AppleNews.yaml
+    interval: 86400
+
+  Peacock:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Peacock.yaml"
+    path: ./ruleset/Peacock.yaml
+    interval: 86400
+
+  Linux:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Linux.yaml"
+    path: ./ruleset/Linux.yaml
+    interval: 86400
+
+  ChinaMax:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/ChinaMax.yaml"
+    path: ./ruleset/ChinaMax.yaml
+    interval: 86400
+
+  iCloudPrivateRelay:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/iCloudPrivateRelay.yaml"
+    path: ./ruleset/iCloudPrivateRelay.yaml
+    interval: 86400
+
+  GoogleSearch:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/GoogleSearch.yaml"
+    path: ./ruleset/GoogleSearch.yaml
+    interval: 86400
+
+  Whatsapp:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Whatsapp.yaml"
+    path: ./ruleset/Whatsapp.yaml
+    interval: 86400
+
+  China:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/China.yaml"
+    path: ./ruleset/China.yaml
+    interval: 86400
+
+  ChinaTelecom:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/ChinaTelecom.yaml"
+    path: ./ruleset/ChinaTelecom.yaml
+    interval: 86400
+
+  AmazonPrimeVideo:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AmazonPrimeVideo.yaml"
+    path: ./ruleset/AmazonPrimeVideo.yaml
+    interval: 86400
+
+  HWTV:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/HWTV.yaml"
+    path: ./ruleset/HWTV.yaml
+    interval: 86400
+
+  Tencent:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Tencent.yaml"
+    path: ./ruleset/Tencent.yaml
+    interval: 86400
+
+  ChinaNews:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/ChinaNews.yaml"
+    path: ./ruleset/ChinaNews.yaml
+    interval: 86400
+
+  ChinaMaxNoMedia:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/ChinaMaxNoMedia.yaml"
+    path: ./ruleset/ChinaMaxNoMedia.yaml
+    interval: 86400
+
+  GoogleFCM:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/GoogleFCM.yaml"
+    path: ./ruleset/GoogleFCM.yaml
+    interval: 86400
+
+  KuaiShou:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/KuaiShou.yaml"
+    path: ./ruleset/KuaiShou.yaml
+    interval: 86400
+
+  Gitee:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Gitee.yaml"
+    path: ./ruleset/Gitee.yaml
+    interval: 86400
+
+  NaSDDNS:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/NaSDDNS.yaml"
+    path: ./ruleset/NaSDDNS.yaml
+    interval: 86400
+
+  Line:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Line.yaml"
+    path: ./ruleset/Line.yaml
+    interval: 86400
+
+  Oracle:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Oracle.yaml"
+    path: ./ruleset/Oracle.yaml
+    interval: 86400
+
+  Netflix:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Netflix.yaml"
+    path: ./ruleset/Netflix.yaml
+    interval: 86400
+
+  HBOUSA:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/HBOUSA.yaml"
+    path: ./ruleset/HBOUSA.yaml
+    interval: 86400
+
+  Ku6:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Ku6.yaml"
+    path: ./ruleset/Ku6.yaml
+    interval: 86400
+
+  NaverTV:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/NaverTV.yaml"
+    path: ./ruleset/NaverTV.yaml
+    interval: 86400
+
+  AppleHardware:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AppleHardware.yaml"
+    path: ./ruleset/AppleHardware.yaml
+    interval: 86400
+
+  WeTV:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/WeTV.yaml"
+    path: ./ruleset/WeTV.yaml
+    interval: 86400
+
+  GitLab:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/GitLab.yaml"
+    path: ./ruleset/GitLab.yaml
+    interval: 86400
+
+  BiliBiliIntl:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/BiliBiliIntl.yaml"
+    path: ./ruleset/BiliBiliIntl.yaml
+    interval: 86400
+
+  TVer:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/TVer.yaml"
+    path: ./ruleset/TVer.yaml
+    interval: 86400
+
+  AppleProxy:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AppleProxy.yaml"
+    path: ./ruleset/AppleProxy.yaml
+    interval: 86400
+
+  ChinaIPs:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/ChinaIPs.yaml"
+    path: ./ruleset/ChinaIPs.yaml
+    interval: 86400
+
+  KugouKuwo:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/KugouKuwo.yaml"
+    path: ./ruleset/KugouKuwo.yaml
+    interval: 86400
+
+  Marketing:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Marketing.yaml"
+    path: ./ruleset/Marketing.yaml
+    interval: 86400
+
+  Weibo:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Weibo.yaml"
+    path: ./ruleset/Weibo.yaml
+    interval: 86400
+
+  Hulu:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Hulu.yaml"
+    path: ./ruleset/Hulu.yaml
+    interval: 86400
+
+  Stripe:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Stripe.yaml"
+    path: ./ruleset/Stripe.yaml
+    interval: 86400
+
+  SoundCloud:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/SoundCloud.yaml"
+    path: ./ruleset/SoundCloud.yaml
+    interval: 86400
+
+  TaiWanGood:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/TaiWanGood.yaml"
+    path: ./ruleset/TaiWanGood.yaml
+    interval: 86400
+
+  Twitch:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Twitch.yaml"
+    path: ./ruleset/Twitch.yaml
+    interval: 86400
+
+  Facebook:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Facebook.yaml"
+    path: ./ruleset/Facebook.yaml
+    interval: 86400
+
+  ChinaDNS:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/ChinaDNS.yaml"
+    path: ./ruleset/ChinaDNS.yaml
+    interval: 86400
+
+  iQIYI:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/iQIYI.yaml"
+    path: ./ruleset/iQIYI.yaml
+    interval: 86400
+
+  iQIYIIntl:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/iQIYIIntl.yaml"
+    path: ./ruleset/iQIYIIntl.yaml
+    interval: 86400
+
+  AbemaTV:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AbemaTV.yaml"
+    path: ./ruleset/AbemaTV.yaml
+    interval: 86400
+
+  TelegramUS:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/TelegramUS.yaml"
+    path: ./ruleset/TelegramUS.yaml
+    interval: 86400
+
+  Akamai:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Akamai.yaml"
+    path: ./ruleset/Akamai.yaml
+    interval: 86400
+
+  Wikimedia:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Wikimedia.yaml"
+    path: ./ruleset/Wikimedia.yaml
+    interval: 86400
+
+  YouTube:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/YouTube.yaml"
+    path: ./ruleset/YouTube.yaml
+    interval: 86400
+
+  HBOHK:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/HBOHK.yaml"
+    path: ./ruleset/HBOHK.yaml
+    interval: 86400
+
+  JingDong:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/JingDong.yaml"
+    path: ./ruleset/JingDong.yaml
+    interval: 86400
+
+  Spotify:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Spotify.yaml"
+    path: ./ruleset/Spotify.yaml
+    interval: 86400
+
+  NetEase:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/NetEase.yaml"
+    path: ./ruleset/NetEase.yaml
+    interval: 86400
+
+  HuYa:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/HuYa.yaml"
+    path: ./ruleset/HuYa.yaml
+    interval: 86400
+
+  GoogleVoice:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/GoogleVoice.yaml"
+    path: ./ruleset/GoogleVoice.yaml
+    interval: 86400
+
+  AppleDaily:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AppleDaily.yaml"
+    path: ./ruleset/AppleDaily.yaml
+    interval: 86400
+
+  TencentVideo:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/TencentVideo.yaml"
+    path: ./ruleset/TencentVideo.yaml
+    interval: 86400
+
+  Eleme:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Eleme.yaml"
+    path: ./ruleset/Eleme.yaml
+    interval: 86400
+
+  AmazonTrust:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AmazonTrust.yaml"
+    path: ./ruleset/AmazonTrust.yaml
+    interval: 86400
+
+  TVB:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/TVB.yaml"
+    path: ./ruleset/TVB.yaml
+    interval: 86400
+
+  ChinaUnicom:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/ChinaUnicom.yaml"
+    path: ./ruleset/ChinaUnicom.yaml
+    interval: 86400
+
+  Mailru:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Mailru.yaml"
+    path: ./ruleset/Mailru.yaml
+    interval: 86400
+
+  ShiNongZhiKe:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/ShiNongZhiKe.yaml"
+    path: ./ruleset/ShiNongZhiKe.yaml
+    interval: 86400
+
+  AdvertisingMiTV:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AdvertisingMiTV.yaml"
+    path: ./ruleset/AdvertisingMiTV.yaml
+    interval: 86400
+
+  Vimeo:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Vimeo.yaml"
+    path: ./ruleset/Vimeo.yaml
+    interval: 86400
+
+  MeiTuan:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/MeiTuan.yaml"
+    path: ./ruleset/MeiTuan.yaml
+    interval: 86400
+
+  Mail:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Mail.yaml"
+    path: ./ruleset/Mail.yaml
+    interval: 86400
+
+  ChinaASN:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/ChinaASN.yaml"
+    path: ./ruleset/ChinaASN.yaml
+    interval: 86400
+
+  ChinaMax_No_IPv6:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/ChinaMax_No_IPv6.yaml"
+    path: ./ruleset/ChinaMax_No_IPv6.yaml
+    interval: 86400
+
+  Ubuntu:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Ubuntu.yaml"
+    path: ./ruleset/Ubuntu.yaml
+    interval: 86400
+
+  NivodTV:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/NivodTV.yaml"
+    path: ./ruleset/NivodTV.yaml
+    interval: 86400
+
+  DAZN:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/DAZN.yaml"
+    path: ./ruleset/DAZN.yaml
+    interval: 86400
+
+  Hijacking:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Hijacking.yaml"
+    path: ./ruleset/Hijacking.yaml
+    interval: 86400
+
+  AdGuardSDNSFilter:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AdGuardSDNSFilter.yaml"
+    path: ./ruleset/AdGuardSDNSFilter.yaml
+    interval: 86400
+
+  FOXNOW:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/FOXNOW.yaml"
+    path: ./ruleset/FOXNOW.yaml
+    interval: 86400
+
+  LiTV:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/LiTV.yaml"
+    path: ./ruleset/LiTV.yaml
+    interval: 86400
+
+  AppleTV:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AppleTV.yaml"
+    path: ./ruleset/AppleTV.yaml
+    interval: 86400
+
+  ChinaNoMedia:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/ChinaNoMedia.yaml"
+    path: ./ruleset/ChinaNoMedia.yaml
+    interval: 86400
+
+  DMM:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/DMM.yaml"
+    path: ./ruleset/DMM.yaml
+    interval: 86400
+
+  Gemini:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Gemini.yaml"
+    path: ./ruleset/Gemini.yaml
+    interval: 86400
+
+  PayPal:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/PayPal.yaml"
+    path: ./ruleset/PayPal.yaml
+    interval: 86400
+
+  SourceForge:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/SourceForge.yaml"
+    path: ./ruleset/SourceForge.yaml
+    interval: 86400
+
+  Anthropic:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Anthropic.yaml"
+    path: ./ruleset/Anthropic.yaml
+    interval: 86400
+
+  ICBC:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/ICBC.yaml"
+    path: ./ruleset/ICBC.yaml
+    interval: 86400
+
+  Intel:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Intel.yaml"
+    path: ./ruleset/Intel.yaml
+    interval: 86400
+
+  KKBOX:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/KKBOX.yaml"
+    path: ./ruleset/KKBOX.yaml
+    interval: 86400
+
+  MOOMusic:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/MOOMusic.yaml"
+    path: ./ruleset/MOOMusic.yaml
+    interval: 86400
+
+  WorldofWarcraft:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/WorldofWarcraft.yaml"
+    path: ./ruleset/WorldofWarcraft.yaml
+    interval: 86400
+
+  IPTVMainland:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/IPTVMainland.yaml"
+    path: ./ruleset/IPTVMainland.yaml
+    interval: 86400
+
+  ChinaMobile:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/ChinaMobile.yaml"
+    path: ./ruleset/ChinaMobile.yaml
+    interval: 86400
+
+  AppleDev:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AppleDev.yaml"
+    path: ./ruleset/AppleDev.yaml
+    interval: 86400
+
+  CCB:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/CCB.yaml"
+    path: ./ruleset/CCB.yaml
+    interval: 86400
+
+  HuluUSA:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/HuluUSA.yaml"
+    path: ./ruleset/HuluUSA.yaml
+    interval: 86400
+
+  Cloudflarecn:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Cloudflarecn.yaml"
+    path: ./ruleset/Cloudflarecn.yaml
+    interval: 86400
+
+  Xunlei:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Xunlei.yaml"
+    path: ./ruleset/Xunlei.yaml
+    interval: 86400
+
+  PrimeVideo:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/PrimeVideo.yaml"
+    path: ./ruleset/PrimeVideo.yaml
+    interval: 86400
+
+  FOXPlus:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/FOXPlus.yaml"
+    path: ./ruleset/FOXPlus.yaml
+    interval: 86400
+
+  OneDrive:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/OneDrive.yaml"
+    path: ./ruleset/OneDrive.yaml
+    interval: 86400
+
+  MOOV:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/MOOV.yaml"
+    path: ./ruleset/MOOV.yaml
+    interval: 86400
+
+  Battle:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Battle.yaml"
+    path: ./ruleset/Battle.yaml
+    interval: 86400
+
+  Migu:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Migu.yaml"
+    path: ./ruleset/Migu.yaml
+    interval: 86400
+
+  JOOX:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/JOOX.yaml"
+    path: ./ruleset/JOOX.yaml
+    interval: 86400
+
+  CMB:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/CMB.yaml"
+    path: ./ruleset/CMB.yaml
+    interval: 86400
+
+  TIDAL:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/TIDAL.yaml"
+    path: ./ruleset/TIDAL.yaml
+    interval: 86400
+
+  GoogleEarth:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/GoogleEarth.yaml"
+    path: ./ruleset/GoogleEarth.yaml
+    interval: 86400
+
+  Claude:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Claude.yaml"
+    path: ./ruleset/Claude.yaml
+    interval: 86400
+
+  Xbox:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Xbox.yaml"
+    path: ./ruleset/Xbox.yaml
+    interval: 86400
+
+  Disney:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Disney.yaml"
+    path: ./ruleset/Disney.yaml
+    interval: 86400
+
+  iCloud:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/iCloud.yaml"
+    path: ./ruleset/iCloud.yaml
+    interval: 86400
+
+  MeWatch:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/MeWatch.yaml"
+    path: ./ruleset/MeWatch.yaml
+    interval: 86400
+
+  ChinaMaxNoIP:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/ChinaMaxNoIP.yaml"
+    path: ./ruleset/ChinaMaxNoIP.yaml
+    interval: 86400
+
+  AppleMail:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AppleMail.yaml"
+    path: ./ruleset/AppleMail.yaml
+    interval: 86400
+
+  Overwatch:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Overwatch.yaml"
+    path: ./ruleset/Overwatch.yaml
+    interval: 86400
+
+  Stackexchange:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Stackexchange.yaml"
+    path: ./ruleset/Stackexchange.yaml
+    interval: 86400
+
+  Telegram:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Telegram.yaml"
+    path: ./ruleset/Telegram.yaml
+    interval: 86400
+
+  FuboTV:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/FuboTV.yaml"
+    path: ./ruleset/FuboTV.yaml
+    interval: 86400
+
+  VISA:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/VISA.yaml"
+    path: ./ruleset/VISA.yaml
+    interval: 86400
+
+  Vercel:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Vercel.yaml"
+    path: ./ruleset/Vercel.yaml
+    interval: 86400
+
+  Civitai:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Civitai.yaml"
+    path: ./ruleset/Civitai.yaml
+    interval: 86400
+
+  Heroku:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Heroku.yaml"
+    path: ./ruleset/Heroku.yaml
+    interval: 86400
+
+  AppleFirmware:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AppleFirmware.yaml"
+    path: ./ruleset/AppleFirmware.yaml
+    interval: 86400
+
+  EncoreTVB:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/EncoreTVB.yaml"
+    path: ./ruleset/EncoreTVB.yaml
+    interval: 86400
+
+  GitHub:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/GitHub.yaml"
+    path: ./ruleset/GitHub.yaml
+    interval: 86400
+
+  KKTV:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/KKTV.yaml"
+    path: ./ruleset/KKTV.yaml
+    interval: 86400
+
+  Dailymail:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Dailymail.yaml"
+    path: ./ruleset/Dailymail.yaml
+    interval: 86400
+
+  Alibaba:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Alibaba.yaml"
+    path: ./ruleset/Alibaba.yaml
+    interval: 86400
+
+  Cloudflare:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Cloudflare.yaml"
+    path: ./ruleset/Cloudflare.yaml
+    interval: 86400
+
+  Copilot:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Copilot.yaml"
+    path: ./ruleset/Copilot.yaml
+    interval: 86400
+
+  PPTV:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/PPTV.yaml"
+    path: ./ruleset/PPTV.yaml
+    interval: 86400
+
+  Pandora:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Pandora.yaml"
+    path: ./ruleset/Pandora.yaml
+    interval: 86400
+
+  AppleMedia:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AppleMedia.yaml"
+    path: ./ruleset/AppleMedia.yaml
+    interval: 86400
+
+  Apple:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Apple.yaml"
+    path: ./ruleset/Apple.yaml
+    interval: 86400
+
+  ChinaMedia:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/ChinaMedia.yaml"
+    path: ./ruleset/ChinaMedia.yaml
+    interval: 86400
+
+  BiliBili:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/BiliBili.yaml"
+    path: ./ruleset/BiliBili.yaml
+    interval: 86400
+
+  Dropbox:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Dropbox.yaml"
+    path: ./ruleset/Dropbox.yaml
+    interval: 86400
+
+  Douyu:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Douyu.yaml"
+    path: ./ruleset/Douyu.yaml
+    interval: 86400
+
+  HuluJP:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/HuluJP.yaml"
+    path: ./ruleset/HuluJP.yaml
+    interval: 86400
+
+  Lan:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Lan.yaml"
+    path: ./ruleset/Lan.yaml
+    interval: 86400
+
+  AdvertisingLite:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AdvertisingLite.yaml"
+    path: ./ruleset/AdvertisingLite.yaml
+    interval: 86400
+
+  DiscoveryPlus:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/DiscoveryPlus.yaml"
+    path: ./ruleset/DiscoveryPlus.yaml
+    interval: 86400
+
+  Instagram:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Instagram.yaml"
+    path: ./ruleset/Instagram.yaml
+    interval: 86400
+
+  PandoraTV:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/PandoraTV.yaml"
+    path: ./ruleset/PandoraTV.yaml
+    interval: 86400
+
+  AMD:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AMD.yaml"
+    path: ./ruleset/AMD.yaml
+    interval: 86400
+
+  BlockHttpDNS:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/BlockHttpDNS.yaml"
+    path: ./ruleset/BlockHttpDNS.yaml
+    interval: 86400
+
+  ParamountPlus:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/ParamountPlus.yaml"
+    path: ./ruleset/ParamountPlus.yaml
+    interval: 86400
+
+  UnionPay:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/UnionPay.yaml"
+    path: ./ruleset/UnionPay.yaml
+    interval: 86400
+
+  Protonmail:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Protonmail.yaml"
+    path: ./ruleset/Protonmail.yaml
+    interval: 86400
+
+  BardAI:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/BardAI.yaml"
+    path: ./ruleset/BardAI.yaml
+    interval: 86400
+
+  SteamCN:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/SteamCN.yaml"
+    path: ./ruleset/SteamCN.yaml
+    interval: 86400
+
+  AmazonIP:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AmazonIP.yaml"
+    path: ./ruleset/AmazonIP.yaml
+    interval: 86400
+
+  PlayStation:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/PlayStation.yaml"
+    path: ./ruleset/PlayStation.yaml
+    interval: 86400
+
+  StarCraftII:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/StarCraftII.yaml"
+    path: ./ruleset/StarCraftII.yaml
+    interval: 86400
+
+  Zhihu:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Zhihu.yaml"
+    path: ./ruleset/Zhihu.yaml
+    interval: 86400
+
+  GoogleDrive:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/GoogleDrive.yaml"
+    path: ./ruleset/GoogleDrive.yaml
+    interval: 86400
+
+  AppleID:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AppleID.yaml"
+    path: ./ruleset/AppleID.yaml
+    interval: 86400
+
+  Slack:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Slack.yaml"
+    path: ./ruleset/Slack.yaml
+    interval: 86400
+
+  Niconico:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Niconico.yaml"
+    path: ./ruleset/Niconico.yaml
+    interval: 86400
+
+  Advertising:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Advertising.yaml"
+    path: ./ruleset/Advertising.yaml
+    interval: 86400
+
+  Reddit:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Reddit.yaml"
+    path: ./ruleset/Reddit.yaml
+    interval: 86400
+
+  Salesforce:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Salesforce.yaml"
+    path: ./ruleset/Salesforce.yaml
+    interval: 86400
+
+  TelegramNL:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/TelegramNL.yaml"
+    path: ./ruleset/TelegramNL.yaml
+    interval: 86400
+
+  My5:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/My5.yaml"
+    path: ./ruleset/My5.yaml
+    interval: 86400
+
+  WeChat:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/WeChat.yaml"
+    path: ./ruleset/WeChat.yaml
+    interval: 86400
+
+  NowE:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/NowE.yaml"
+    path: ./ruleset/NowE.yaml
+    interval: 86400
+
+  ChinaIPs_No_IPv6:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/ChinaIPs_No_IPv6.yaml"
+    path: ./ruleset/ChinaIPs_No_IPv6.yaml
+    interval: 86400
+
+  BOC:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/BOC.yaml"
+    path: ./ruleset/BOC.yaml
+    interval: 86400
+
+  AmazonCN:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AmazonCN.yaml"
+    path: ./ruleset/AmazonCN.yaml
+    interval: 86400
+
+  Google:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Google.yaml"
+    path: ./ruleset/Google.yaml
+    interval: 86400
+
+  Steam:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Steam.yaml"
+    path: ./ruleset/Steam.yaml
+    interval: 86400
+
+  Teams:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Teams.yaml"
+    path: ./ruleset/Teams.yaml
+    interval: 86400
+
+  HBO:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/HBO.yaml"
+    path: ./ruleset/HBO.yaml
+    interval: 86400
+
+  AdvertisingTest:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AdvertisingTest.yaml"
+    path: ./ruleset/AdvertisingTest.yaml
+    interval: 86400
+
+  Amazon:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Amazon.yaml"
+    path: ./ruleset/Amazon.yaml
+    interval: 86400
+
+  OpenAI:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/OpenAI.yaml"
+    path: ./ruleset/OpenAI.yaml
+    interval: 86400
+
+  NetEaseMusic:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/NetEaseMusic.yaml"
+    path: ./ruleset/NetEaseMusic.yaml
+    interval: 86400
+
+  Nvidia:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Nvidia.yaml"
+    path: ./ruleset/Nvidia.yaml
+    interval: 86400
+
+  Youku:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Youku.yaml"
+    path: ./ruleset/Youku.yaml
+    interval: 86400
+
+  DouYin:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/DouYin.yaml"
+    path: ./ruleset/DouYin.yaml
+    interval: 86400
+
+  Twitter:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Twitter.yaml"
+    path: ./ruleset/Twitter.yaml
+    interval: 86400
+
+  YouTubeMusic:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/YouTubeMusic.yaml"
+    path: ./ruleset/YouTubeMusic.yaml
+    interval: 86400
+
+  TelegramSG:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/TelegramSG.yaml"
+    path: ./ruleset/TelegramSG.yaml
+    interval: 86400
+
+  TikTok:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/TikTok.yaml"
+    path: ./ruleset/TikTok.yaml
+    interval: 86400
+
+  Wikipedia:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Wikipedia.yaml"
+    path: ./ruleset/Wikipedia.yaml
+    interval: 86400
+
+  Abema:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Abema.yaml"
+    path: ./ruleset/Abema.yaml
+    interval: 86400
+
+  ChinaIPsBGP:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/ChinaIPsBGP.yaml"
+    path: ./ruleset/ChinaIPsBGP.yaml
+    interval: 86400
+
+  AppleMusic:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AppleMusic.yaml"
+    path: ./ruleset/AppleMusic.yaml
+    interval: 86400
+
+  LineTV:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/LineTV.yaml"
+    path: ./ruleset/LineTV.yaml
+    interval: 86400
+
+  Viki:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Viki.yaml"
+    path: ./ruleset/Viki.yaml
+    interval: 86400
+
+  VidolTV:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/VidolTV.yaml"
+    path: ./ruleset/VidolTV.yaml
+    interval: 86400
+
+  BOCOM:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/BOCOM.yaml"
+    path: ./ruleset/BOCOM.yaml
+    interval: 86400
+
+  HamiVideo:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/HamiVideo.yaml"
+    path: ./ruleset/HamiVideo.yaml
+    interval: 86400
+
+  Microsoft:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Microsoft.yaml"
+    path: ./ruleset/Microsoft.yaml
+    interval: 86400
+
+  GovCN:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/GovCN.yaml"
+    path: ./ruleset/GovCN.yaml
+    interval: 86400
+
+  Docker:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Docker.yaml"
+    path: ./ruleset/Docker.yaml
+    interval: 86400
+
+  EasyPrivacy:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/EasyPrivacy.yaml"
+    path: ./ruleset/EasyPrivacy.yaml
+    interval: 86400
+
+  AliPay:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AliPay.yaml"
+    path: ./ruleset/AliPay.yaml
+    interval: 86400
+
+  Wordpress:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Wordpress.yaml"
+    path: ./ruleset/Wordpress.yaml
+    interval: 86400
+
+  115:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/115.yaml"
+    path: ./ruleset/115.yaml
+    interval: 86400
+
+  12306:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/12306.yaml"
+    path: ./ruleset/12306.yaml
+    interval: 86400
+
+  1337x:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/1337x.yaml"
+    path: ./ruleset/1337x.yaml
+    interval: 86400
+
+  17173:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/17173.yaml"
+    path: ./ruleset/17173.yaml
+    interval: 86400
+
+  178:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/178.yaml"
+    path: ./ruleset/178.yaml
+    interval: 86400
+
+  17zuoye:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/17zuoye.yaml"
+    path: ./ruleset/17zuoye.yaml
+    interval: 86400
+
+  2KGames:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/2KGames.yaml"
+    path: ./ruleset/2KGames.yaml
+    interval: 86400
+
+  360:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/360.yaml"
+    path: ./ruleset/360.yaml
+    interval: 86400
+
+  36kr:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/36kr.yaml"
+    path: ./ruleset/36kr.yaml
+    interval: 86400
+
+  3Type:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/3Type.yaml"
+    path: ./ruleset/3Type.yaml
+    interval: 86400
+
+  3dm:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/3dm.yaml"
+    path: ./ruleset/3dm.yaml
+    interval: 86400
+
+  4399:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/4399.yaml"
+    path: ./ruleset/4399.yaml
+    interval: 86400
+
+  4Paradigm:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/4Paradigm.yaml"
+    path: ./ruleset/4Paradigm.yaml
+    interval: 86400
+
+  4chan:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/4chan.yaml"
+    path: ./ruleset/4chan.yaml
+    interval: 86400
+
+  51Job:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/51Job.yaml"
+    path: ./ruleset/51Job.yaml
+    interval: 86400
+
+  51nod:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/51nod.yaml"
+    path: ./ruleset/51nod.yaml
+    interval: 86400
+
+  56:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/56.yaml"
+    path: ./ruleset/56.yaml
+    interval: 86400
+
+  58TongCheng:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/58TongCheng.yaml"
+    path: ./ruleset/58TongCheng.yaml
+    interval: 86400
+
+  6JianFang:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/6JianFang.yaml"
+    path: ./ruleset/6JianFang.yaml
+    interval: 86400
+
+  6park:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/6park.yaml"
+    path: ./ruleset/6park.yaml
+    interval: 86400
+
+  8btc:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/8btc.yaml"
+    path: ./ruleset/8btc.yaml
+    interval: 86400
+
+  9News:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/9News.yaml"
+    path: ./ruleset/9News.yaml
+    interval: 86400
+
+  9to5:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/9to5.yaml"
+    path: ./ruleset/9to5.yaml
+    interval: 86400
+
+  ABC:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/ABC.yaml"
+    path: ./ruleset/ABC.yaml
+    interval: 86400
+
+  AFP:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AFP.yaml"
+    path: ./ruleset/AFP.yaml
+    interval: 86400
+
+  ALJazeera:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/ALJazeera.yaml"
+    path: ./ruleset/ALJazeera.yaml
+    interval: 86400
+
+  AMP:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AMP.yaml"
+    path: ./ruleset/AMP.yaml
+    interval: 86400
+
+  AOL:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AOL.yaml"
+    path: ./ruleset/AOL.yaml
+    interval: 86400
+
+  APKCombo:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/APKCombo.yaml"
+    path: ./ruleset/APKCombo.yaml
+    interval: 86400
+
+  ATTWatchTV:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/ATTWatchTV.yaml"
+    path: ./ruleset/ATTWatchTV.yaml
+    interval: 86400
+
+  AcFun:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AcFun.yaml"
+    path: ./ruleset/AcFun.yaml
+    interval: 86400
+
+  Accuweather:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Accuweather.yaml"
+    path: ./ruleset/Accuweather.yaml
+    interval: 86400
+
+  Acer:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Acer.yaml"
+    path: ./ruleset/Acer.yaml
+    interval: 86400
+
+  Acplay:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Acplay.yaml"
+    path: ./ruleset/Acplay.yaml
+    interval: 86400
+
+  Actalis:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Actalis.yaml"
+    path: ./ruleset/Actalis.yaml
+    interval: 86400
+
+  AdColony:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AdColony.yaml"
+    path: ./ruleset/AdColony.yaml
+    interval: 86400
+
+  AddToAny:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AddToAny.yaml"
+    path: ./ruleset/AddToAny.yaml
+    interval: 86400
+
+  Addthis:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Addthis.yaml"
+    path: ./ruleset/Addthis.yaml
+    interval: 86400
+
+  Adidas:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Adidas.yaml"
+    path: ./ruleset/Adidas.yaml
+    interval: 86400
+
+  Adobe:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Adobe.yaml"
+    path: ./ruleset/Adobe.yaml
+    interval: 86400
+
+  AdobeActivation:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AdobeActivation.yaml"
+    path: ./ruleset/AdobeActivation.yaml
+    interval: 86400
+
+  Aerogard:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Aerogard.yaml"
+    path: ./ruleset/Aerogard.yaml
+    interval: 86400
+
+  Afdian:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Afdian.yaml"
+    path: ./ruleset/Afdian.yaml
+    interval: 86400
+
+  Agora:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Agora.yaml"
+    path: ./ruleset/Agora.yaml
+    interval: 86400
+
+  AiQiCha:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AiQiCha.yaml"
+    path: ./ruleset/AiQiCha.yaml
+    interval: 86400
+
+  AirChina:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AirChina.yaml"
+    path: ./ruleset/AirChina.yaml
+    interval: 86400
+
+  AirWick:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AirWick.yaml"
+    path: ./ruleset/AirWick.yaml
+    interval: 86400
+
+  Ali213:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Ali213.yaml"
+    path: ./ruleset/Ali213.yaml
+    interval: 86400
+
+  All4:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/All4.yaml"
+    path: ./ruleset/All4.yaml
+    interval: 86400
+
+  Americasvoice:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Americasvoice.yaml"
+    path: ./ruleset/Americasvoice.yaml
+    interval: 86400
+
+  AnTianKeJi:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AnTianKeJi.yaml"
+    path: ./ruleset/AnTianKeJi.yaml
+    interval: 86400
+
+  Anaconda:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Anaconda.yaml"
+    path: ./ruleset/Anaconda.yaml
+    interval: 86400
+
+  AnandTech:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AnandTech.yaml"
+    path: ./ruleset/AnandTech.yaml
+    interval: 86400
+
+  Android:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Android.yaml"
+    path: ./ruleset/Android.yaml
+    interval: 86400
+
+  Anime:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Anime.yaml"
+    path: ./ruleset/Anime.yaml
+    interval: 86400
+
+  Anjuke:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Anjuke.yaml"
+    path: ./ruleset/Anjuke.yaml
+    interval: 86400
+
+  Anonv:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Anonv.yaml"
+    path: ./ruleset/Anonv.yaml
+    interval: 86400
+
+  Antutu:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Antutu.yaml"
+    path: ./ruleset/Antutu.yaml
+    interval: 86400
+
+  Apifox:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Apifox.yaml"
+    path: ./ruleset/Apifox.yaml
+    interval: 86400
+
+  Apkpure:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Apkpure.yaml"
+    path: ./ruleset/Apkpure.yaml
+    interval: 86400
+
+  AppLovin:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AppLovin.yaml"
+    path: ./ruleset/AppLovin.yaml
+    interval: 86400
+
+  AppStore:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AppStore.yaml"
+    path: ./ruleset/AppStore.yaml
+    interval: 86400
+
+  Arphic:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Arphic.yaml"
+    path: ./ruleset/Arphic.yaml
+    interval: 86400
+
+  Asahi:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Asahi.yaml"
+    path: ./ruleset/Asahi.yaml
+    interval: 86400
+
+  AsianMedia:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/AsianMedia.yaml"
+    path: ./ruleset/AsianMedia.yaml
+    interval: 86400
+
+  Atlassian:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Atlassian.yaml"
+    path: ./ruleset/Atlassian.yaml
+    interval: 86400
+
+  Atomdata:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Atomdata.yaml"
+    path: ./ruleset/Atomdata.yaml
+    interval: 86400
+
+  BBC:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/BBC.yaml"
+    path: ./ruleset/BBC.yaml
+    interval: 86400
+
+  BMW:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/BMW.yaml"
+    path: ./ruleset/BMW.yaml
+    interval: 86400
+
+  Bahamut:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Bahamut.yaml"
+    path: ./ruleset/Bahamut.yaml
+    interval: 86400
+
+  BaiDuTieBa:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/BaiDuTieBa.yaml"
+    path: ./ruleset/BaiDuTieBa.yaml
+    interval: 86400
+
+  BaiFenDian:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/BaiFenDian.yaml"
+    path: ./ruleset/BaiFenDian.yaml
+    interval: 86400
+
+  BaiShanYunKeJi:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/BaiShanYunKeJi.yaml"
+    path: ./ruleset/BaiShanYunKeJi.yaml
+    interval: 86400
+
+  BaoFengYingYin:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/BaoFengYingYin.yaml"
+    path: ./ruleset/BaoFengYingYin.yaml
+    interval: 86400
+
+  BeStore:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/BeStore.yaml"
+    path: ./ruleset/BeStore.yaml
+    interval: 86400
+
+  Beats:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Beats.yaml"
+    path: ./ruleset/Beats.yaml
+    interval: 86400
+
+  BesTV:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/BesTV.yaml"
+    path: ./ruleset/BesTV.yaml
+    interval: 86400
+
+  Bestbuy:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Bestbuy.yaml"
+    path: ./ruleset/Bestbuy.yaml
+    interval: 86400
+
+  BianFeng:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/BianFeng.yaml"
+    path: ./ruleset/BianFeng.yaml
+    interval: 86400
+
+  Binance:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Binance.yaml"
+    path: ./ruleset/Binance.yaml
+    interval: 86400
+
+  Bing:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Bing.yaml"
+    path: ./ruleset/Bing.yaml
+    interval: 86400
+
+  Blizzard:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Blizzard.yaml"
+    path: ./ruleset/Blizzard.yaml
+    interval: 86400
+
+  Bloomberg:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Bloomberg.yaml"
+    path: ./ruleset/Bloomberg.yaml
+    interval: 86400
+
+  Blued:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Blued.yaml"
+    path: ./ruleset/Blued.yaml
+    interval: 86400
+
+  BoXun:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/BoXun.yaml"
+    path: ./ruleset/BoXun.yaml
+    interval: 86400
+
+  Bootcss:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Bootcss.yaml"
+    path: ./ruleset/Bootcss.yaml
+    interval: 86400
+
+  BrightCove:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/BrightCove.yaml"
+    path: ./ruleset/BrightCove.yaml
+    interval: 86400
+
+  BritboxUK:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/BritboxUK.yaml"
+    path: ./ruleset/BritboxUK.yaml
+    interval: 86400
+
+  Buypass:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/Buypass.yaml"
+    path: ./ruleset/Buypass.yaml
+    interval: 86400
+
+  ByteDance:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/ByteDance.yaml"
+    path: ./ruleset/ByteDance.yaml
+    interval: 86400
+
+  CAS:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/CAS.yaml"
+    path: ./ruleset/CAS.yaml
+    interval: 86400
+
+  CBS:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/CBS.yaml"
+    path: ./ruleset/CBS.yaml
+    interval: 86400
+
+  CCTV:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/CCTV.yaml"
+    path: ./ruleset/CCTV.yaml
+    interval: 86400
+
+  CEB:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/CEB.yaml"
+    path: ./ruleset/CEB.yaml
+    interval: 86400
+
+  CETV:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/CETV.yaml"
+    path: ./ruleset/CETV.yaml
+    interval: 86400
+
+  CGB:
+    type: http
+    behavior: classical
+    url: "https://rule.kelee.one/Clash/CGB.yaml"
+    path: ./ruleset/CGB.yaml
+    interval: 86400
+
+rules:
+  - RULE-SET,DigitalOcean,[APP] 动态切换
+  - RULE-SET,Funshion,[Media] 视频媒体
+  - RULE-SET,HBOAsia,[Media] 视频媒体
+  - RULE-SET,MicrosoftEdge,[APP] 动态切换
+  - RULE-SET,ZDNS,DIRECT
+  - RULE-SET,Npmjs,[APP] 动态切换
+  - RULE-SET,Baidu,DIRECT
+  - RULE-SET,ChinaTest,DIRECT
+  - RULE-SET,AppleNews,[APP] 动态切换
+  - RULE-SET,Peacock,[Media] 视频媒体
+  - RULE-SET,Linux,[APP] 动态切换
+  - RULE-SET,ChinaMax,DIRECT
+  - RULE-SET,iCloudPrivateRelay,[APP] 动态切换
+  - RULE-SET,GoogleSearch,[AI] OpenAI 优选
+  - RULE-SET,Whatsapp,[APP] 动态切换
+  - RULE-SET,China,DIRECT
+  - RULE-SET,ChinaTelecom,DIRECT
+  - RULE-SET,AmazonPrimeVideo,[Media] 视频媒体
+  - RULE-SET,HWTV,[Media] 视频媒体
+  - RULE-SET,Tencent,DIRECT
+  - RULE-SET,ChinaNews,DIRECT
+  - RULE-SET,ChinaMaxNoMedia,DIRECT
+  - RULE-SET,GoogleFCM,[AI] OpenAI 优选
+  - RULE-SET,KuaiShou,DIRECT
+  - RULE-SET,Gitee,DIRECT
+  - RULE-SET,NaSDDNS,REJECT
+  - RULE-SET,Line,[APP] 动态切换
+  - RULE-SET,Oracle,[APP] 动态切换
+  - RULE-SET,Netflix,[Media] 视频媒体
+  - RULE-SET,HBOUSA,[Media] 视频媒体
+  - RULE-SET,Ku6,[Media] 视频媒体
+  - RULE-SET,NaverTV,[Media] 视频媒体
+  - RULE-SET,AppleHardware,[APP] 动态切换
+  - RULE-SET,WeTV,[Media] 视频媒体
+  - RULE-SET,GitLab,[APP] 动态切换
+  - RULE-SET,BiliBiliIntl,[Media] 视频媒体
+  - RULE-SET,TVer,[Media] 视频媒体
+  - RULE-SET,AppleProxy,[APP] 动态切换
+  - RULE-SET,ChinaIPs,DIRECT
+  - RULE-SET,KugouKuwo,DIRECT
+  - RULE-SET,Marketing,REJECT
+  - RULE-SET,Weibo,[APP] 动态切换
+  - RULE-SET,Hulu,[Media] 视频媒体
+  - RULE-SET,Stripe,[APP] 动态切换
+  - RULE-SET,SoundCloud,[Media] 视频媒体
+  - RULE-SET,TaiWanGood,[Media] 视频媒体
+  - RULE-SET,Twitch,[APP] 动态切换
+  - RULE-SET,Facebook,[APP] 动态切换
+  - RULE-SET,ChinaDNS,DIRECT
+  - RULE-SET,iQIYI,DIRECT
+  - RULE-SET,iQIYIIntl,DIRECT
+  - RULE-SET,AbemaTV,[Media] 视频媒体
+  - RULE-SET,TelegramUS,[APP] 动态切换
+  - RULE-SET,Akamai,[APP] 动态切换
+  - RULE-SET,Wikimedia,[APP] 动态切换
+  - RULE-SET,YouTube,[Media] 视频媒体
+  - RULE-SET,HBOHK,[Media] 视频媒体
+  - RULE-SET,JingDong,DIRECT
+  - RULE-SET,Spotify,[Media] 视频媒体
+  - RULE-SET,NetEase,[APP] 动态切换
+  - RULE-SET,HuYa,DIRECT
+  - RULE-SET,GoogleVoice,[AI] OpenAI 优选
+  - RULE-SET,AppleDaily,[APP] 动态切换
+  - RULE-SET,TencentVideo,DIRECT
+  - RULE-SET,Eleme,DIRECT
+  - RULE-SET,AmazonTrust,[APP] 动态切换
+  - RULE-SET,TVB,[Media] 视频媒体
+  - RULE-SET,ChinaUnicom,DIRECT
+  - RULE-SET,Mailru,[APP] 动态切换
+  - RULE-SET,ShiNongZhiKe,REJECT
+  - RULE-SET,AdvertisingMiTV,REJECT
+  - RULE-SET,Vimeo,[Media] 视频媒体
+  - RULE-SET,MeiTuan,DIRECT
+  - RULE-SET,Mail,[APP] 动态切换
+  - RULE-SET,ChinaASN,DIRECT
+  - RULE-SET,ChinaMax_No_IPv6,DIRECT
+  - RULE-SET,Ubuntu,[APP] 动态切换
+  - RULE-SET,NivodTV,[Media] 视频媒体
+  - RULE-SET,DAZN,[Media] 视频媒体
+  - RULE-SET,Hijacking,REJECT
+  - RULE-SET,AdGuardSDNSFilter,REJECT
+  - RULE-SET,FOXNOW,[Media] 视频媒体
+  - RULE-SET,LiTV,[Media] 视频媒体
+  - RULE-SET,AppleTV,[Media] 视频媒体
+  - RULE-SET,ChinaNoMedia,DIRECT
+  - RULE-SET,DMM,[Media] 视频媒体
+  - RULE-SET,Gemini,[AI] OpenAI 优选
+  - RULE-SET,PayPal,[APP] 动态切换
+  - RULE-SET,SourceForge,[APP] 动态切换
+  - RULE-SET,Anthropic,[AI] OpenAI 优选
+  - RULE-SET,ICBC,DIRECT
+  - RULE-SET,Intel,[APP] 动态切换
+  - RULE-SET,KKBOX,[Media] 视频媒体
+  - RULE-SET,MOOMusic,[Media] 视频媒体
+  - RULE-SET,WorldofWarcraft,[APP] 动态切换
+  - RULE-SET,IPTVMainland,DIRECT
+  - RULE-SET,ChinaMobile,DIRECT
+  - RULE-SET,AppleDev,[APP] 动态切换
+  - RULE-SET,CCB,DIRECT
+  - RULE-SET,HuluUSA,[Media] 视频媒体
+  - RULE-SET,Cloudflarecn,DIRECT
+  - RULE-SET,Xunlei,DIRECT
+  - RULE-SET,PrimeVideo,[Media] 视频媒体
+  - RULE-SET,FOXPlus,[Media] 视频媒体
+  - RULE-SET,OneDrive,[APP] 动态切换
+  - RULE-SET,MOOV,[Media] 视频媒体
+  - RULE-SET,Battle,[APP] 动态切换
+  - RULE-SET,Migu,DIRECT
+  - RULE-SET,JOOX,[Media] 视频媒体
+  - RULE-SET,CMB,DIRECT
+  - RULE-SET,TIDAL,[Media] 视频媒体
+  - RULE-SET,GoogleEarth,[AI] OpenAI 优选
+  - RULE-SET,Claude,[AI] OpenAI 优选
+  - RULE-SET,Xbox,[APP] 动态切换
+  - RULE-SET,Disney,[Media] 视频媒体
+  - RULE-SET,iCloud,DIRECT
+  - RULE-SET,MeWatch,[Media] 视频媒体
+  - RULE-SET,ChinaMaxNoIP,DIRECT
+  - RULE-SET,AppleMail,[APP] 动态切换
+  - RULE-SET,Overwatch,[APP] 动态切换
+  - RULE-SET,Stackexchange,[APP] 动态切换
+  - RULE-SET,Telegram,[APP] 动态切换
+  - RULE-SET,FuboTV,[Media] 视频媒体
+  - RULE-SET,VISA,[APP] 动态切换
+  - RULE-SET,Vercel,[APP] 动态切换
+  - RULE-SET,Civitai,[AI] OpenAI 优选
+  - RULE-SET,Heroku,[APP] 动态切换
+  - RULE-SET,AppleFirmware,[APP] 动态切换
+  - RULE-SET,EncoreTVB,[Media] 视频媒体
+  - RULE-SET,GitHub,[APP] 动态切换
+  - RULE-SET,KKTV,[Media] 视频媒体
+  - RULE-SET,Dailymail,[APP] 动态切换
+  - RULE-SET,Alibaba,DIRECT
+  - RULE-SET,Cloudflare,[APP] 动态切换
+  - RULE-SET,Copilot,[AI] OpenAI 优选
+  - RULE-SET,PPTV,[Media] 视频媒体
+  - RULE-SET,Pandora,[Media] 视频媒体
+  - RULE-SET,AppleMedia,[Media] 视频媒体
+  - RULE-SET,Apple,[APP] 动态切换
+  - RULE-SET,ChinaMedia,DIRECT
+  - RULE-SET,BiliBili,DIRECT
+  - RULE-SET,Dropbox,[APP] 动态切换
+  - RULE-SET,Douyu,DIRECT
+  - RULE-SET,HuluJP,[Media] 视频媒体
+  - RULE-SET,Lan,DIRECT
+  - RULE-SET,AdvertisingLite,REJECT
+  - RULE-SET,DiscoveryPlus,[Media] 视频媒体
+  - RULE-SET,Instagram,[APP] 动态切换
+  - RULE-SET,PandoraTV,[Media] 视频媒体
+  - RULE-SET,AMD,[APP] 动态切换
+  - RULE-SET,BlockHttpDNS,REJECT
+  - RULE-SET,ParamountPlus,[Media] 视频媒体
+  - RULE-SET,UnionPay,DIRECT
+  - RULE-SET,Protonmail,[APP] 动态切换
+  - RULE-SET,BardAI,[AI] OpenAI 优选
+  - RULE-SET,SteamCN,DIRECT
+  - RULE-SET,AmazonIP,[APP] 动态切换
+  - RULE-SET,PlayStation,[APP] 动态切换
+  - RULE-SET,StarCraftII,[APP] 动态切换
+  - RULE-SET,Zhihu,DIRECT
+  - RULE-SET,GoogleDrive,[AI] OpenAI 优选
+  - RULE-SET,AppleID,DIRECT
+  - RULE-SET,Slack,[APP] 动态切换
+  - RULE-SET,Niconico,[Media] 视频媒体
+  - RULE-SET,Advertising,REJECT
+  - RULE-SET,Reddit,[APP] 动态切换
+  - RULE-SET,Salesforce,[APP] 动态切换
+  - RULE-SET,TelegramNL,[APP] 动态切换
+  - RULE-SET,My5,[Media] 视频媒体
+  - RULE-SET,WeChat,DIRECT
+  - RULE-SET,NowE,[Media] 视频媒体
+  - RULE-SET,ChinaIPs_No_IPv6,DIRECT
+  - RULE-SET,BOC,DIRECT
+  - RULE-SET,AmazonCN,[APP] 动态切换
+  - RULE-SET,Google,[APP] 动态切换
+  - RULE-SET,Steam,[APP] 动态切换
+  - RULE-SET,Teams,[APP] 动态切换
+  - RULE-SET,HBO,[Media] 视频媒体
+  - RULE-SET,AdvertisingTest,REJECT
+  - RULE-SET,Amazon,[APP] 动态切换
+  - RULE-SET,OpenAI,[AI] OpenAI 优选
+  - RULE-SET,NetEaseMusic,[Media] 视频媒体
+  - RULE-SET,Nvidia,[APP] 动态切换
+  - RULE-SET,Youku,DIRECT
+  - RULE-SET,DouYin,DIRECT
+  - RULE-SET,Twitter,[APP] 动态切换
+  - RULE-SET,YouTubeMusic,[Media] 视频媒体
+  - RULE-SET,TelegramSG,[APP] 动态切换
+  - RULE-SET,TikTok,[APP] 动态切换
+  - RULE-SET,Wikipedia,[APP] 动态切换
+  - RULE-SET,Abema,[Media] 视频媒体
+  - RULE-SET,ChinaIPsBGP,DIRECT
+  - RULE-SET,AppleMusic,[Media] 视频媒体
+  - RULE-SET,LineTV,[Media] 视频媒体
+  - RULE-SET,Viki,[Media] 视频媒体
+  - RULE-SET,VidolTV,[Media] 视频媒体
+  - RULE-SET,BOCOM,DIRECT
+  - RULE-SET,HamiVideo,[Media] 视频媒体
+  - RULE-SET,Microsoft,[APP] 动态切换
+  - RULE-SET,GovCN,DIRECT
+  - RULE-SET,Docker,[APP] 动态切换
+  - RULE-SET,EasyPrivacy,REJECT
+  - RULE-SET,AliPay,DIRECT
+  - RULE-SET,Wordpress,[APP] 动态切换
+  - RULE-SET,115,DIRECT
+  - RULE-SET,12306,[APP] 动态切换
+  - RULE-SET,1337x,[APP] 动态切换
+  - RULE-SET,17173,[APP] 动态切换
+  - RULE-SET,178,[APP] 动态切换
+  - RULE-SET,17zuoye,[APP] 动态切换
+  - RULE-SET,2KGames,[APP] 动态切换
+  - RULE-SET,360,[APP] 动态切换
+  - RULE-SET,36kr,[APP] 动态切换
+  - RULE-SET,3Type,[APP] 动态切换
+  - RULE-SET,3dm,[APP] 动态切换
+  - RULE-SET,4399,DIRECT
+  - RULE-SET,4Paradigm,[APP] 动态切换
+  - RULE-SET,4chan,[APP] 动态切换
+  - RULE-SET,51Job,[APP] 动态切换
+  - RULE-SET,51nod,[APP] 动态切换
+  - RULE-SET,56,[APP] 动态切换
+  - RULE-SET,58TongCheng,[APP] 动态切换
+  - RULE-SET,6JianFang,[APP] 动态切换
+  - RULE-SET,6park,[APP] 动态切换
+  - RULE-SET,8btc,[APP] 动态切换
+  - RULE-SET,9News,[APP] 动态切换
+  - RULE-SET,9to5,[APP] 动态切换
+  - RULE-SET,ABC,[APP] 动态切换
+  - RULE-SET,AFP,[APP] 动态切换
+  - RULE-SET,ALJazeera,[APP] 动态切换
+  - RULE-SET,AMP,[APP] 动态切换
+  - RULE-SET,AOL,[APP] 动态切换
+  - RULE-SET,APKCombo,[APP] 动态切换
+  - RULE-SET,ATTWatchTV,[APP] 动态切换
+  - RULE-SET,AcFun,[APP] 动态切换
+  - RULE-SET,Accuweather,[APP] 动态切换
+  - RULE-SET,Acer,[APP] 动态切换
+  - RULE-SET,Acplay,[APP] 动态切换
+  - RULE-SET,Actalis,[APP] 动态切换
+  - RULE-SET,AdColony,[APP] 动态切换
+  - RULE-SET,AddToAny,[APP] 动态切换
+  - RULE-SET,Addthis,[APP] 动态切换
+  - RULE-SET,Adidas,[APP] 动态切换
+  - RULE-SET,Adobe,[APP] 动态切换
+  - RULE-SET,AdobeActivation,[APP] 动态切换
+  - RULE-SET,Aerogard,[APP] 动态切换
+  - RULE-SET,Afdian,[APP] 动态切换
+  - RULE-SET,Agora,[APP] 动态切换
+  - RULE-SET,AiQiCha,DIRECT
+  - RULE-SET,AirChina,DIRECT
+  - RULE-SET,AirWick,[APP] 动态切换
+  - RULE-SET,Ali213,[APP] 动态切换
+  - RULE-SET,All4,[APP] 动态切换
+  - RULE-SET,Americasvoice,[APP] 动态切换
+  - RULE-SET,AnTianKeJi,[APP] 动态切换
+  - RULE-SET,Anaconda,[APP] 动态切换
+  - RULE-SET,AnandTech,[APP] 动态切换
+  - RULE-SET,Android,[APP] 动态切换
+  - RULE-SET,Anime,[APP] 动态切换
+  - RULE-SET,Anjuke,[APP] 动态切换
+  - RULE-SET,Anonv,[APP] 动态切换
+  - RULE-SET,Antutu,[APP] 动态切换
+  - RULE-SET,Apifox,[APP] 动态切换
+  - RULE-SET,Apkpure,[APP] 动态切换
+  - RULE-SET,AppLovin,[APP] 动态切换
+  - RULE-SET,AppStore,[APP] 动态切换
+  - RULE-SET,Arphic,[APP] 动态切换
+  - RULE-SET,Asahi,[APP] 动态切换
+  - RULE-SET,AsianMedia,[Media] 视频媒体
+  - RULE-SET,Atlassian,[APP] 动态切换
+  - RULE-SET,Atomdata,[APP] 动态切换
+  - RULE-SET,BBC,[APP] 动态切换
+  - RULE-SET,BMW,[APP] 动态切换
+  - RULE-SET,Bahamut,[APP] 动态切换
+  - RULE-SET,BaiDuTieBa,[APP] 动态切换
+  - RULE-SET,BaiFenDian,[APP] 动态切换
+  - RULE-SET,BaiShanYunKeJi,[APP] 动态切换
+  - RULE-SET,BaoFengYingYin,[APP] 动态切换
+  - RULE-SET,BeStore,[APP] 动态切换
+  - RULE-SET,Beats,[APP] 动态切换
+  - RULE-SET,BesTV,[APP] 动态切换
+  - RULE-SET,Bestbuy,[APP] 动态切换
+  - RULE-SET,BianFeng,[APP] 动态切换
+  - RULE-SET,Binance,[APP] 动态切换
+  - RULE-SET,Bing,[APP] 动态切换
+  - RULE-SET,Blizzard,[APP] 动态切换
+  - RULE-SET,Bloomberg,[APP] 动态切换
+  - RULE-SET,Blued,[APP] 动态切换
+  - RULE-SET,BoXun,[APP] 动态切换
+  - RULE-SET,Bootcss,[APP] 动态切换
+  - RULE-SET,BrightCove,[APP] 动态切换
+  - RULE-SET,BritboxUK,[APP] 动态切换
+  - RULE-SET,Buypass,[APP] 动态切换
+  - RULE-SET,ByteDance,[APP] 动态切换
+  - RULE-SET,CAS,[APP] 动态切换
+  - RULE-SET,CBS,[APP] 动态切换
+  - RULE-SET,CCTV,[APP] 动态切换
+  - RULE-SET,CEB,[APP] 动态切换
+  - RULE-SET,CETV,[APP] 动态切换
+  - RULE-SET,CGB,[APP] 动态切换
+  - RULE-SET,SELF_VPN,[APP] 动态切换
+  - RULE-SET,98Tang,[Media] 视频媒体
+  - RULE-SET,AD,REJECT
+  - GEOIP,LAN,DIRECT,no-resolve
+  - GEOIP,CN,DIRECT,no-resolve
+  - MATCH,[APP] 动态切换

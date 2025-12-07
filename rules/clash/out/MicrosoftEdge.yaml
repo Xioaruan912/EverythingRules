@@ -1,0 +1,7 @@
+# UpdateTime：2025-12-06 03:06:18
+# RuleCount：4
+payload:
+  - DOMAIN,msedge.api.cdp.microsoft.com
+  - DOMAIN,edge.microsoft.com
+  - DOMAIN,iecvlist.microsoft.com
+  - DOMAIN,edge.activity.windows.com

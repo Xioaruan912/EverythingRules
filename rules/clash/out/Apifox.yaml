@@ -1,0 +1,5 @@
+# UpdateTime：2025-12-06 03:05:50
+# RuleCount：2
+payload:
+  - DOMAIN-SUFFIX,apifox.cn
+  - DOMAIN-SUFFIX,apifox.com

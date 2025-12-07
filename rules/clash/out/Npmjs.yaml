@@ -1,0 +1,6 @@
+# UpdateTime：2025-12-06 03:05:52
+# RuleCount：3
+payload:
+  - DOMAIN-SUFFIX,npmjs.com
+  - DOMAIN-SUFFIX,npm.community
+  - DOMAIN-SUFFIX,npmjs.org

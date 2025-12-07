@@ -1,0 +1,5 @@
+# UpdateTime：2025-12-06 03:06:15
+# RuleCount：2
+payload:
+  - DOMAIN-SUFFIX,peacocktv.com
+  - USER-AGENT,PeacockMobile*
