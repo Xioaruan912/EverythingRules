@@ -42,7 +42,7 @@ HK = select, 香港, url = http://cp.cloudflare.com/generate_204, img-url = http
 JP = select, 日本, url = http://cp.cloudflare.com/generate_204, img-url = https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Country/JP.png
 SG = select, 新加坡, url = http://cp.cloudflare.com/generate_204, img-url = https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Country/SG.png
 Netflix = select, Global, US, HK, JP, TW, SG, DIRECT, url = http://cp.cloudflare.com/generate_204, img-url = https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Netflix.png
-Youtube = select, Global, US, JP, SG, DIRECT, url = http://cp.cloudflare.com/generate_204, img-url = https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Tiktok.png
+Youtube = select, Global, US, JP, SG, DIRECT, url = http://cp.cloudflare.com/generate_204, img-url = https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Youtube.png
 Mainland = select, DIRECT, url = http://cp.cloudflare.com/generate_204, img-url = https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Mainland.png
 Advertising = select, REJECT, url = http://cp.cloudflare.com/generate_204, img-url = https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/AdBlock.png
 FINAL = select, Global, DIRECT, url = http://cp.cloudflare.com/generate_204, img-url = https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Final01.png
