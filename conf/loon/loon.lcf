@@ -51,7 +51,7 @@ FINAL = select, Global, DIRECT, url = http://cp.cloudflare.com/generate_204, img
 
 [Remote Rule]
 # -------------------- 🌏 全球代理类规则--------------------
-https://kelee.one/Tool/Loon/Lsr/AI.lsr, policy=US, tag=AI.lsr, enabled=true
+https://kelee.one/Tool/Loon/Lsr/AI.lsr, policy=FINAL, tag=AI.lsr, enabled=true
 https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Loon/Google/Google.list, policy=Global, tag=Google, enabled=true
 https://kelee.one/Tool/Loon/Lsr/SpeedtestInternational.lsr, policy=Global, tag=Speedtest-INT, enabled=true
 https://rule.kelee.one/Loon/Speedtest.lsr, policy=Global, tag=Speedtest, enabled=true
@@ -59,9 +59,9 @@ https://rule.kelee.one/Loon/YouTube.lsr, policy=YouTube, tag=YouTube, enabled=tr
 https://rule.kelee.one/Loon/Spotify.lsr, policy=YouTube, tag=Spotify, enabled=true
 https://rule.kelee.one/Loon/Netflix.lsr, policy=Netflix, tag=Netflix, enabled=true
 https://rule.kelee.one/Loon/TikTok.lsr, policy=YouTube, tag=TikTok, enabled=true
-https://rule.kelee.one/Loon/Telegram.lsr, policy=US, tag=Telegram, enabled=true
+https://rule.kelee.one/Loon/Telegram.lsr, policy=FINAL, tag=Telegram, enabled=true
 https://rule.kelee.one/Loon/Pixiv.lsr, policy=Global, tag=Pixiv, enabled=true
-https://raw.githubusercontent.com/Xioaruan912/EverythingRules/refs/heads/main/rules/loon/98Tang.list, policy=US, tag=98Tang, enabled=true
+https://raw.githubusercontent.com/Xioaruan912/EverythingRules/refs/heads/main/rules/loon/98Tang.list, policy=FINAL, tag=98Tang, enabled=true
 https://raw.githubusercontent.com/Xioaruan912/EverythingRules/refs/heads/main/rules/loon/SELF_VPN.list, policy=Global, tag=self_vpn, enabled=true
 
 
